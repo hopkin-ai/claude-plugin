@@ -1,0 +1,15 @@
+{
+  "name": "hopkin",
+  "description": "The Hopkin plugin for Claude: ad, email, search, and web analytics reporting across Google, Meta, LinkedIn, Reddit, TikTok, ChatGPT Ads, Mailchimp, Search Console, and GA4.",
+  "owner": {
+    "name": "Hopkin",
+    "url": "https://www.hopkin.ai"
+  },
+  "plugins": [
+    {
+      "name": "hopkin",
+      "source": "./",
+      "category": "productivity"
+    }
+  ]
+}
