@@ -36,26 +36,11 @@ If no `google_ads_` prefixed tools are available:
 2. **Direct them to sign up** at https://app.hopkin.ai
 3. **Provide setup instructions:**
 
-> The Hopkin Google Ads MCP is not configured. To use this skill:
+> The Hopkin Google Ads MCP is not connected. To use this skill:
 >
-> 1. Sign up at **https://app.hopkin.ai**
-> 2. Add the hosted MCP to your Claude configuration:
->
-> ```json
-> {
->   "mcpServers": {
->     "hopkin-google-ads": {
->       "type": "url",
->       "url": "https://google.mcp.hopkin.ai/mcp",
->       "headers": {
->         "Authorization": "Bearer YOUR_HOPKIN_TOKEN"
->       }
->     }
->   }
-> }
-> ```
->
-> 3. Restart Claude after updating configuration
+> 1. Sign up at **https://app.hopkin.ai** and connect your account there
+> 2. Make sure the **Hopkin** plugin is installed and enabled. It sets up the hosted `hopkin-google-ads` MCP server (`https://google.mcp.hopkin.ai/mcp`) for you, so there is nothing to configure by hand
+> 3. When Claude asks you to sign in to `hopkin-google-ads`, finish the Hopkin login in your browser. Sign-in uses OAuth, so there is no token to copy or paste
 
 4. **Pause execution** until the user confirms MCP installation is complete
 5. **Re-verify** MCP availability after user confirmation
@@ -381,7 +366,7 @@ For detailed troubleshooting guidance, see **references/troubleshooting.md**.
 
 Common quick fixes:
 
-- **"MCP server not found"** — Verify Hopkin MCP configuration and token
+- **"MCP server not found"** — Check that the Hopkin plugin is enabled and its server is signed in
 - **"Not authenticated"** — Run `google_ads_check_auth_status`; direct user to connect their account at https://app.hopkin.ai
 - **"Invalid customer ID"** — Remove hyphens from customer ID (use 1234567890, not 123-456-7890)
 - **"Account not found"** — Verify customer ID and account access

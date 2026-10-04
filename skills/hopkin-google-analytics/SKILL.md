@@ -36,23 +36,11 @@ If no `ga4_` prefixed tools are available:
 2. **Direct them to sign up** at https://app.hopkin.ai
 3. **Provide setup instructions:**
 
-> The Hopkin Google Analytics MCP is not configured. To use this skill:
+> The Hopkin Google Analytics MCP is not connected. To use this skill:
 >
-> 1. Sign up at **https://app.hopkin.ai**
-> 2. Add the hosted MCP to your Claude configuration:
->
-> ```json
-> {
->   "mcpServers": {
->     "hopkin-google-analytics": {
->       "type": "http",
->       "url": "https://ga4.mcp.hopkin.ai/mcp"
->     }
->   }
-> }
-> ```
->
-> 3. Restart Claude after updating configuration
+> 1. Sign up at **https://app.hopkin.ai** and connect your account there
+> 2. Make sure the **Hopkin** plugin is installed and enabled. It sets up the hosted `hopkin-google-analytics` MCP server (`https://ga4.mcp.hopkin.ai/mcp`) for you, so there is nothing to configure by hand
+> 3. When Claude asks you to sign in to `hopkin-google-analytics`, finish the Hopkin login in your browser. Sign-in uses OAuth, so there is no token to copy or paste
 
 4. **Pause execution** until the user confirms MCP installation is complete
 5. **Re-verify** MCP availability after user confirmation
@@ -125,7 +113,7 @@ All tools use the `ga4_` prefix.
 - **Landing page performance:** dimensions `[landingPagePlusQueryString]`, metrics `[sessions, keyEvents, purchaseRevenue]`, order by sessions desc
 - **Daily trend:** dimensions `[date]`, metrics `[sessions, totalUsers]`, order by dimension `date`
 - **Paid traffic only:** add `dimension_filter: { field: 'sessionDefaultChannelGroup', values: ['Paid Search'] }`
-- **Period-over-period:** pass two `date_ranges`; totals come back keyed per range in `metric_totals_by_range`
+- **Period-over-period:** request two `date_ranges`; each range gets its own totals in `metric_totals_by_range`
 - **Geo breakdown:** dimensions `[country]` or `[city]`, metrics `[sessions, totalUsers, keyEvents]`
 - **Device split:** dimensions `[deviceCategory]`, metrics `[sessions, keyEvents]`
 - **Event audit:** dimensions `[eventName]`, metrics `[eventCount]`

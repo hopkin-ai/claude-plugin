@@ -20,28 +20,24 @@ This document provides detailed reference information for the Hopkin LinkedIn Ad
 
 - **Service:** Hopkin — hosted MCP service
 - **Sign up:** https://app.hopkin.ai
-- **Type:** Hosted MCP (URL + auth token, no local installation)
+- **Type:** Hosted MCP (OAuth sign-in, no local installation)
 
-### Required Configuration
+### Configuration
 
-Configure the Hopkin LinkedIn Ads MCP as a hosted MCP service in your Claude settings:
+The Hopkin plugin registers this server for you:
 
 ```json
 {
   "mcpServers": {
     "hopkin-linkedin-ads": {
-      "type": "url",
-      "url": "https://linkedin.mcp.hopkin.ai/mcp",
-      "headers": {
-        "Authorization": "Bearer YOUR_HOPKIN_TOKEN"
-      }
+      "type": "http",
+      "url": "https://linkedin.mcp.hopkin.ai/mcp"
     }
   }
 }
 ```
 
-**Required Credentials:**
-- **Hopkin Token** — Obtain from https://app.hopkin.ai after signing up
+It signs in with OAuth against the user's Hopkin account at https://app.hopkin.ai. There is no token to configure.
 
 ---
 

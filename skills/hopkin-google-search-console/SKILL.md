@@ -37,26 +37,11 @@ If no `google_search_console_` prefixed tools are available:
 2. **Direct them to sign up** at https://app.hopkin.ai
 3. **Provide setup instructions:**
 
-> The Hopkin Google Search Console MCP is not configured. To use this skill:
+> The Hopkin Google Search Console MCP is not connected. To use this skill:
 >
-> 1. Sign up at **https://app.hopkin.ai**
-> 2. Add the hosted MCP to your Claude configuration:
->
-> ```json
-> {
->   "mcpServers": {
->     "hopkin-google-search-console": {
->       "type": "url",
->       "url": "https://gcs.mcp.hopkin.ai/mcp",
->       "headers": {
->         "Authorization": "Bearer YOUR_HOPKIN_TOKEN"
->       }
->     }
->   }
-> }
-> ```
->
-> 3. Restart Claude after updating configuration
+> 1. Sign up at **https://app.hopkin.ai** and connect your account there
+> 2. Make sure the **Hopkin** plugin is installed and enabled. It sets up the hosted `hopkin-google-search-console` MCP server (`https://gcs.mcp.hopkin.ai/mcp`) for you, so there is nothing to configure by hand
+> 3. When Claude asks you to sign in to `hopkin-google-search-console`, finish the Hopkin login in your browser. Sign-in uses OAuth, so there is no token to copy or paste
 
 4. **Pause execution** until the user confirms MCP installation is complete
 5. **Re-verify** MCP availability after user confirmation
@@ -319,7 +304,7 @@ For detailed troubleshooting guidance, see **references/troubleshooting.md**.
 
 Common quick fixes:
 
-- **"MCP server not found"** — Verify Hopkin MCP configuration and token
+- **"MCP server not found"** — Check that the Hopkin plugin is enabled and its server is signed in
 - **"Not authenticated"** — Run `google_search_console_check_auth_status`; direct user to connect their account at https://app.hopkin.ai
 - **"Site not found"** — Verify property URL with `google_search_console_list_sites`; check exact format
 - **"No data available"** — Check date range; recent dates (last 3 days) may be incomplete

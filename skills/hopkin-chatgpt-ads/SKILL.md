@@ -35,26 +35,11 @@ If no `chatgpt_ads_` prefixed tools are available:
 2. **Direct them to sign up** at https://app.hopkin.ai
 3. **Provide setup instructions:**
 
-> The Hopkin ChatGPT Ads MCP is not configured. To use this skill:
+> The Hopkin ChatGPT Ads MCP is not connected. To use this skill:
 >
-> 1. Sign up at **https://app.hopkin.ai**
-> 2. Add the hosted MCP to your Claude configuration:
->
-> ```json
-> {
->   "mcpServers": {
->     "hopkin-chatgpt-ads": {
->       "type": "url",
->       "url": "https://chatgpt.mcp.hopkin.ai/mcp",
->       "headers": {
->         "Authorization": "Bearer YOUR_HOPKIN_TOKEN"
->       }
->     }
->   }
-> }
-> ```
->
-> 3. Restart Claude after updating configuration
+> 1. Sign up at **https://app.hopkin.ai** and connect your account there
+> 2. Make sure the **Hopkin** plugin is installed and enabled. It sets up the hosted `hopkin-chatgpt-ads` MCP server (`https://chatgpt.mcp.hopkin.ai/mcp`) for you, so there is nothing to configure by hand
+> 3. When Claude asks you to sign in to `hopkin-chatgpt-ads`, finish the Hopkin login in your browser. Sign-in uses OAuth, so there is no token to copy or paste
 
 ### Authentication Flow
 

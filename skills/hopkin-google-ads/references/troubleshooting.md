@@ -28,33 +28,17 @@ This guide provides solutions to common issues encountered when using the Google
 
 **Solutions:**
 
-#### Solution 1: Sign Up and Configure Hopkin
+#### Solution 1: Install the Hopkin Plugin and Sign In
 
 1. Sign up at **https://app.hopkin.ai**
-2. Add the hosted MCP to your Claude configuration:
+2. Install and enable the **Hopkin** plugin. It registers the hosted `hopkin-google-ads` MCP server (`https://google.mcp.hopkin.ai/mcp`) for you
+3. When Claude asks you to sign in to `hopkin-google-ads`, finish the Hopkin login in your browser (OAuth, no token needed)
 
-```json
-{
-  "mcpServers": {
-    "hopkin-google-ads": {
-      "type": "url",
-      "url": "https://google.mcp.hopkin.ai/mcp",
-      "headers": {
-        "Authorization": "Bearer YOUR_HOPKIN_TOKEN"
-      }
-    }
-  }
-}
-```
+#### Solution 2: Check the Plugin and Server
 
-3. Restart Claude after updating configuration
-
-#### Solution 2: Verify Configuration
-
-If the MCP is configured but tools aren't appearing:
-1. Check that the Hopkin token is correct and not expired
-2. Verify the MCP URL is exactly: `https://google.mcp.hopkin.ai/mcp`
-3. Ensure the Authorization header format is: `Bearer YOUR_TOKEN` (with a space after Bearer)
+If the plugin is installed but tools aren't appearing:
+1. Confirm the Hopkin plugin is enabled (`/plugin` in Claude Code, or **Customize → Plugins** in Claude)
+2. Confirm the `hopkin-google-ads` server is connected (`/mcp` in Claude Code). If it says it needs authentication, sign in again
 
 #### Solution 3: Restart Claude
 
@@ -64,7 +48,7 @@ After installing or configuring the MCP server:
 3. Verify `google_ads_` tools appear in available tools
 
 **Prevention:**
-- Keep your Hopkin token up to date
+- Re-sign in to the Hopkin server if Claude reports it needs authentication
 - Verify MCP configuration before starting complex tasks
 
 ---
@@ -307,7 +291,7 @@ UI applies default filters (hides removed campaigns). Match UI filters in querie
 When encountering issues, work through this checklist:
 
 - [ ] **MCP Connection**
-  - [ ] Hopkin MCP is configured with valid token
+  - [ ] Hopkin plugin is enabled and its server is signed in
   - [ ] `google_ads_` tools appear in available tools
   - [ ] Claude has been restarted after config changes
 

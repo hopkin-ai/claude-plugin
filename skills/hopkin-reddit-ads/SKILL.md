@@ -24,26 +24,11 @@ Check for `reddit_ads_` prefixed tools (e.g., `reddit_ads_check_auth_status`). I
 
 Inform the user and provide setup instructions:
 
-> The Hopkin Reddit Ads MCP is not configured. To use this skill:
+> The Hopkin Reddit Ads MCP is not connected. To use this skill:
 >
-> 1. Sign up at **https://app.hopkin.ai**
-> 2. Add the hosted MCP to your Claude configuration:
->
-> ```json
-> {
->   "mcpServers": {
->     "hopkin-reddit-ads": {
->       "type": "url",
->       "url": "https://reddit.mcp.hopkin.ai/mcp",
->       "headers": {
->         "Authorization": "Bearer YOUR_HOPKIN_TOKEN"
->       }
->     }
->   }
-> }
-> ```
->
-> 3. Restart Claude after updating configuration
+> 1. Sign up at **https://app.hopkin.ai** and connect your account there
+> 2. Make sure the **Hopkin** plugin is installed and enabled. It sets up the hosted `hopkin-reddit-ads` MCP server (`https://reddit.mcp.hopkin.ai/mcp`) for you, so there is nothing to configure by hand
+> 3. When Claude asks you to sign in to `hopkin-reddit-ads`, finish the Hopkin login in your browser. Sign-in uses OAuth, so there is no token to copy or paste
 
 Pause execution until the user confirms, then re-verify.
 
@@ -283,7 +268,7 @@ Reddit account IDs are **plain strings** — no prefix conversion needed (unlike
 
 See **references/troubleshooting.md** for full guidance.
 
-- **"MCP server not found"** — Verify Hopkin MCP config and token
+- **"MCP server not found"** — Check that the Hopkin plugin is enabled and its server is signed in
 - **"Not authenticated"** — Direct user to https://app.hopkin.ai
 - **"Token expired"** — Reddit tokens auto-refresh server-side (1-hour expiry); if persistent, reconnect at https://app.hopkin.ai
 - **"Account not found"** — Verify account ID with `reddit_ads_list_ad_accounts`

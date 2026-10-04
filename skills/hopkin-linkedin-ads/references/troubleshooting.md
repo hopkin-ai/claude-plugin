@@ -29,33 +29,17 @@ This guide provides solutions to common issues encountered when using the Linked
 
 **Solutions:**
 
-#### Solution 1: Sign Up and Configure Hopkin
+#### Solution 1: Install the Hopkin Plugin and Sign In
 
 1. Sign up at **https://app.hopkin.ai**
-2. Add the hosted MCP to your Claude configuration:
+2. Install and enable the **Hopkin** plugin. It registers the hosted `hopkin-linkedin-ads` MCP server (`https://linkedin.mcp.hopkin.ai/mcp`) for you
+3. When Claude asks you to sign in to `hopkin-linkedin-ads`, finish the Hopkin login in your browser (OAuth, no token needed)
 
-```json
-{
-  "mcpServers": {
-    "hopkin-linkedin-ads": {
-      "type": "url",
-      "url": "https://linkedin.mcp.hopkin.ai/mcp",
-      "headers": {
-        "Authorization": "Bearer YOUR_HOPKIN_TOKEN"
-      }
-    }
-  }
-}
-```
+#### Solution 2: Check the Plugin and Server
 
-3. Restart Claude after updating configuration
-
-#### Solution 2: Verify Configuration
-
-If the MCP is configured but tools aren't appearing:
-1. Check that the Hopkin token is correct and not expired
-2. Verify the MCP URL is exactly: `https://linkedin.mcp.hopkin.ai/mcp`
-3. Ensure the Authorization header format is: `Bearer YOUR_TOKEN` (with a space after Bearer)
+If the plugin is installed but tools aren't appearing:
+1. Confirm the Hopkin plugin is enabled (`/plugin` in Claude Code, or **Customize → Plugins** in Claude)
+2. Confirm the `hopkin-linkedin-ads` server is connected (`/mcp` in Claude Code). If it says it needs authentication, sign in again
 
 #### Solution 3: Restart Claude
 
@@ -370,7 +354,7 @@ The ad-library and competitor tools need **no LinkedIn connection**. Auth advice
 When encountering issues, work through this checklist:
 
 - [ ] **MCP Connection**
-  - [ ] Hopkin MCP is configured with valid token
+  - [ ] Hopkin plugin is enabled and its server is signed in
   - [ ] `linkedin_ads_` tools appear in available tools
   - [ ] Claude has been restarted after config changes
 
@@ -399,7 +383,7 @@ When encountering issues, work through this checklist:
 ## Common Patterns Summary
 
 **"MCP server not found"**
-→ Check: Hopkin MCP configuration and token, restart Claude
+→ Check: Hopkin plugin enabled and its server signed in, restart Claude
 
 **"Not authenticated"**
 → Run: `linkedin_ads_check_auth_status` → Direct user to https://app.hopkin.ai

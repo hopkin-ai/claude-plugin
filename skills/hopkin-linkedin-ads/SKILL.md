@@ -25,26 +25,11 @@ Check for `linkedin_ads_` prefixed tools (e.g., `linkedin_ads_check_auth_status`
 
 Inform the user and provide setup instructions:
 
-> The Hopkin LinkedIn Ads MCP is not configured. To use this skill:
+> The Hopkin LinkedIn Ads MCP is not connected. To use this skill:
 >
-> 1. Sign up at **https://app.hopkin.ai**
-> 2. Add the hosted MCP to your Claude configuration:
->
-> ```json
-> {
->   "mcpServers": {
->     "hopkin-linkedin-ads": {
->       "type": "url",
->       "url": "https://linkedin.mcp.hopkin.ai/mcp",
->       "headers": {
->         "Authorization": "Bearer YOUR_HOPKIN_TOKEN"
->       }
->     }
->   }
-> }
-> ```
->
-> 3. Restart Claude after updating configuration
+> 1. Sign up at **https://app.hopkin.ai** and connect your account there
+> 2. Make sure the **Hopkin** plugin is installed and enabled. It sets up the hosted `hopkin-linkedin-ads` MCP server (`https://linkedin.mcp.hopkin.ai/mcp`) for you, so there is nothing to configure by hand
+> 3. When Claude asks you to sign in to `hopkin-linkedin-ads`, finish the Hopkin login in your browser. Sign-in uses OAuth, so there is no token to copy or paste
 
 Pause execution until the user confirms, then re-verify.
 
@@ -336,7 +321,7 @@ Most Hopkin tools accept numeric IDs. `linkedin_ads_list_creatives` accepts both
 
 See **references/troubleshooting.md** for full guidance.
 
-- **"MCP server not found"** — Verify Hopkin MCP config and token
+- **"MCP server not found"** — Check that the Hopkin plugin is enabled and its server is signed in
 - **"Not authenticated"** — Direct user to https://app.hopkin.ai
 - **"Token expired"** — LinkedIn tokens expire after 60 days; reconnect at https://app.hopkin.ai
 - **"Account not found"** — Account ID must be numeric (no URN prefix)

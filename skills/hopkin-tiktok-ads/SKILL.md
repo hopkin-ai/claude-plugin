@@ -24,26 +24,11 @@ Check for `tiktok_ads_` prefixed tools (e.g., `tiktok_ads_check_auth_status`). I
 
 Inform the user and provide setup instructions:
 
-> The Hopkin TikTok Ads MCP is not configured. To use this skill:
+> The Hopkin TikTok Ads MCP is not connected. To use this skill:
 >
-> 1. Sign up at **https://app.hopkin.ai**
-> 2. Add the hosted MCP to your Claude configuration:
->
-> ```json
-> {
->   "mcpServers": {
->     "hopkin-tiktok-ads": {
->       "type": "url",
->       "url": "https://tiktok.mcp.hopkin.ai/mcp",
->       "headers": {
->         "Authorization": "Bearer YOUR_HOPKIN_TOKEN"
->       }
->     }
->   }
-> }
-> ```
->
-> 3. Restart Claude after updating configuration
+> 1. Sign up at **https://app.hopkin.ai** and connect your account there
+> 2. Make sure the **Hopkin** plugin is installed and enabled. It sets up the hosted `hopkin-tiktok-ads` MCP server (`https://tiktok.mcp.hopkin.ai/mcp`) for you, so there is nothing to configure by hand
+> 3. When Claude asks you to sign in to `hopkin-tiktok-ads`, finish the Hopkin login in your browser. Sign-in uses OAuth, so there is no token to copy or paste
 
 Pause execution until the user confirms, then re-verify.
 
@@ -322,7 +307,7 @@ TikTok advertiser IDs are **numeric strings**. Use them exactly as returned by `
 
 See **references/troubleshooting.md** for full guidance.
 
-- **"MCP server not found"** — Verify Hopkin MCP config and token at https://app.hopkin.ai
+- **"MCP server not found"** — Check that the Hopkin plugin is enabled and its server is signed in (https://app.hopkin.ai)
 - **"Not authenticated"** — Use `tiktok_ads_get_login_url` or direct user to https://app.hopkin.ai
 - **"Token expired"** — Direct user to reconnect at https://app.hopkin.ai
 - **"Advertiser not found"** — Verify advertiser ID with `tiktok_ads_list_advertisers`
