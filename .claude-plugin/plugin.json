@@ -8,11 +8,11 @@
     "url": "https://www.hopkin.ai"
   },
   "homepage": "https://www.hopkin.ai",
-  "repository": "https://github.com/Hopkin-AI/claude-plugin",
+  "repository": "https://github.com/hopkin-ai/claude-plugin",
   "license": "MIT",
   "icon": "./.claude-plugin/icon.png",
   "documentationUrl": "https://www.hopkin.ai/docs/getting-started",
-  "supportUrl": "https://github.com/Hopkin-AI/claude-plugin/issues",
+  "supportUrl": "https://github.com/hopkin-ai/claude-plugin/issues",
   "privacyPolicyUrl": "https://www.hopkin.ai/privacy-policy",
   "termsOfServiceUrl": "https://www.hopkin.ai/terms-of-service",
   "keywords": [

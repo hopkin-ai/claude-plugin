@@ -23,7 +23,7 @@ Claude answers with live data from your own accounts.
 ### Claude Code
 
 ```bash
-/plugin marketplace add Hopkin-AI/claude-plugin
+/plugin marketplace add hopkin-ai/claude-plugin
 /plugin install hopkin@hopkin
 ```
 
@@ -32,7 +32,7 @@ Claude answers with live data from your own accounts.
 Go to **Customize → Personal plugins → + → Add marketplace** and enter:
 
 ```
-https://github.com/Hopkin-AI/claude-plugin
+https://github.com/hopkin-ai/claude-plugin
 ```
 
 Then install the **Hopkin** plugin.
@@ -71,7 +71,7 @@ See the [Privacy Policy](https://www.hopkin.ai/privacy-policy) and [Terms of Ser
 ## Support
 
 - Documentation: [hopkin.ai/docs](https://www.hopkin.ai/docs/getting-started)
-- Issues and feature requests: [GitHub Issues](https://github.com/Hopkin-AI/claude-plugin/issues)
+- Issues and feature requests: [GitHub Issues](https://github.com/hopkin-ai/claude-plugin/issues)
 
 ## License
 
