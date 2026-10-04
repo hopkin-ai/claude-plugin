@@ -99,7 +99,7 @@ Gather and confirm before pulling data:
 
 **Always include visual examples of creatives in reports.** Stakeholders need to see what performed well/poorly.
 
-1. **Use `meta_ads_preview_ads`** to render visual ad previews with metrics overlay. Pass `ad_id` values from `meta_ads_get_ad_creative_report` directly:
+1. **Use `meta_ads_preview_ads`** to render visual ad previews with metrics overlay. Provide `ad_id` values from `meta_ads_get_ad_creative_report` directly:
    ```json
    {
      "tool": "meta_ads_preview_ads",
@@ -371,7 +371,7 @@ For video ads, include additional video performance metrics:
 ## Best Practices
 
 1. **Use `meta_ads_get_ad_creative_report`** as the primary data source — `level: "ad_name"` for concept comparison, `level: "ad_id"` for individual ads. Returned `ad_id` values work directly with `meta_ads_preview_ads`.
-2. **Use `meta_ads_preview_ads`** for all creative reviews — renders visual UI with images/videos and metrics. Pass ad IDs from the creative report directly.
+2. **Use `meta_ads_preview_ads`** for all creative reviews — renders visual UI with images/videos and metrics. Provide ad IDs from the creative report directly.
 3. **Always include creative visuals** — Never present creative results without showing the ads. Download assets locally (Meta URLs expire).
 4. **Confirm scope, metrics, and output format before pulling data** — Ambiguity leads to rework.
 5. **Define benchmarks explicitly** — Don't rely on intuition for winner/loser calls. Ensure sufficient sample size before declaring winners.

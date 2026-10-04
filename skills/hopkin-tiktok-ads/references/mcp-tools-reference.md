@@ -38,7 +38,7 @@ The Hopkin plugin registers this server for you:
 }
 ```
 
-It signs in with OAuth against the user's Hopkin account at https://app.hopkin.ai. There is no token to configure.
+It signs in with OAuth against the user's Hopkin account at https://app.hopkin.ai. There is nothing else to configure.
 
 ---
 

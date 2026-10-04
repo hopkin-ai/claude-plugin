@@ -37,7 +37,7 @@ The Hopkin plugin registers this server for you:
 }
 ```
 
-It signs in with OAuth against the user's Hopkin account at https://app.hopkin.ai. There is no token to configure.
+It signs in with OAuth against the user's Hopkin account at https://app.hopkin.ai. There is nothing else to configure.
 
 ---
 
@@ -71,7 +71,7 @@ Health check. Verify the MCP server is reachable and returns version/timestamp.
 ### Account Tools
 
 #### google_ads_list_accounts
-List all Google Ads accounts accessible to the authenticated user. Child accounts include a `managerCustomerId` field indicating their parent MCC — when querying those accounts with other tools, pass `login_customer_id` with that value.
+List all Google Ads accounts accessible to the authenticated user. Child accounts include a `managerCustomerId` field indicating their parent MCC — when querying those accounts with other tools, provide `login_customer_id` with that value.
 
 **Parameters:**
 - `reason` (string, required) — Reason for the call
@@ -93,7 +93,7 @@ List all Google Ads accounts accessible to the authenticated user. Child account
 ```
 
 #### google_ads_list_mcc_child_accounts
-List child accounts under a Manager (MCC) account. When querying these child accounts with other tools, pass `login_customer_id` with the MCC Customer ID.
+List child accounts under a Manager (MCC) account. When querying these child accounts with other tools, provide `login_customer_id` with the MCC Customer ID.
 
 **Parameters:**
 - `reason` (string, required) — Reason for the call

@@ -33,7 +33,7 @@ This guide provides solutions to common issues encountered when using the Linked
 
 1. Sign up at **https://app.hopkin.ai**
 2. Install and enable the **Hopkin** plugin. It registers the hosted `hopkin-linkedin-ads` MCP server (`https://linkedin.mcp.hopkin.ai/mcp`) for you
-3. When Claude asks you to sign in to `hopkin-linkedin-ads`, finish the Hopkin login in your browser (OAuth, no token needed)
+3. When Claude asks you to sign in to `hopkin-linkedin-ads`, finish the Hopkin login in your browser (OAuth, nothing to copy or paste)
 
 #### Solution 2: Check the Plugin and Server
 
@@ -309,7 +309,7 @@ The ad-library and competitor tools need **no LinkedIn connection**. Auth advice
 
 **Cause:** Only a clean organization ID is looked up: digits, no leading zero. A slug, a URL or a padded number (`0123`) is not.
 
-**Solution:** Pass the number from `linkedin.com/company/<id>` or an Ad Library URL's `companyIds=`, or use `advertiser_name` with the company's exact LinkedIn name.
+**Solution:** Provide the number from `linkedin.com/company/<id>` or an Ad Library URL's `companyIds=`, or use `advertiser_name` with the company's exact LinkedIn name.
 
 ### Newly tracked competitor shows no ads (or only a few)
 

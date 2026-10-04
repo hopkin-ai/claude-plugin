@@ -29,7 +29,7 @@ Inform the user and provide setup instructions:
 >
 > 1. Sign up at **https://app.hopkin.ai** and connect your account there
 > 2. Make sure the **Hopkin** plugin is installed and enabled. It sets up the hosted `hopkin-linkedin-ads` MCP server (`https://linkedin.mcp.hopkin.ai/mcp`) for you, so there is nothing to configure by hand
-> 3. When Claude asks you to sign in to `hopkin-linkedin-ads`, finish the Hopkin login in your browser. Sign-in uses OAuth, so there is no token to copy or paste
+> 3. When Claude asks you to sign in to `hopkin-linkedin-ads`, finish the Hopkin login in your browser. Sign-in uses OAuth, so there is nothing to copy or paste
 
 Pause execution until the user confirms, then re-verify.
 
@@ -56,7 +56,7 @@ When `linkedin_ads_list_ad_accounts` returns multiple accounts, present them as 
 A user can have more than one LinkedIn connection (their own, or ones shared with them through their organization). Every account and reporting tool accepts an optional `connection_id`; omit it to use the default connection.
 
 - `linkedin_ads_list_connections` shows each connection's name, ID, whether it is the default, and whether it is owned or shared
-- Pass `connection_id` to target a specific one
+- Provide `connection_id` to target a specific one
 - `linkedin_ads_set_default_connection` changes which one is used when `connection_id` is omitted — call it only when the user asks
 
 ## LinkedIn Ads Hierarchy
@@ -94,7 +94,7 @@ No MCC equivalent — all accounts are accessible directly; no `login_customer_i
 - `linkedin_ads_get_insights` — Flexible analytics; **the only tool supporting LinkedIn's unique MEMBER_* demographic pivots**
 
 ### Charts & Visualization
-- `linkedin_ads_render_chart` — **MCP App. ALWAYS use this when the user asks for any chart, graph, map, or visualization.** Do NOT substitute a table or text summary. Supports 6 types: `bar` (compare values across campaigns/placements), `scatter` (correlation between two metrics), `timeseries` (metrics over time), `funnel` (conversion stages), `waterfall` (cumulative contribution), `choropleth` (US state heatmap). Fetch the data first with insights or performance report tools, then pass the structured data here. This renders an interactive visual — it is the correct tool whenever a chart is explicitly requested.
+- `linkedin_ads_render_chart` — **MCP App. ALWAYS use this when the user asks for any chart, graph, map, or visualization.** Do NOT substitute a table or text summary. Supports 6 types: `bar` (compare values across campaigns/placements), `scatter` (correlation between two metrics), `timeseries` (metrics over time), `funnel` (conversion stages), `waterfall` (cumulative contribution), `choropleth` (US state heatmap). Fetch the data first with insights or performance report tools, then provide the structured data here. This renders an interactive visual — it is the correct tool whenever a chart is explicitly requested.
 
 ### Partner Conversions
 - `linkedin_ads_get_partner_conversions` — List partner conversions (LinkedIn's term for "conversion actions"); call before interpreting conversion metrics or ROAS
@@ -216,8 +216,8 @@ See what other companies run on LinkedIn — real copy, CTAs, landing pages, for
 
 The rules that matter most:
 
-- **To track, prefer the organization ID.** Pass `organization_id` to `linkedin_ads_track_competitor` — the number in `linkedin.com/company/<id>` or in an Ad Library URL's `companyIds=` — or pass the URL the user pasted as `company_url`. The ID is exact and works cold: one never collected is looked up live (about 20–40 s) and tracked in the same call under its real name. A wrong ID gets "no ads", with nothing tracked.
-- **Use `name` when you only have a name**, exactly as shown on the company's LinkedIn page. To see one company's ads without tracking, pass `organization_ids` to `linkedin_ads_search_ad_library` when you have the ID (exact; one never collected is looked up live, one ID per call) or `advertiser_name` — `search_terms` searches ad *copy*, which rarely names the advertiser.
+- **To track, prefer the organization ID.** Provide `organization_id` to `linkedin_ads_track_competitor` — the number in `linkedin.com/company/<id>` or in an Ad Library URL's `companyIds=` — or provide the URL the user pasted as `company_url`. The ID is exact and works cold: one never collected is looked up live (about 20–40 s) and tracked in the same call under its real name. A wrong ID gets "no ads", with nothing tracked.
+- **Use `name` when you only have a name**, exactly as shown on the company's LinkedIn page. To see one company's ads without tracking, provide `organization_ids` to `linkedin_ads_search_ad_library` when you have the ID (exact; one never collected is looked up live, one ID per call) or `advertiser_name` — `search_terms` searches ad *copy*, which rarely names the advertiser.
 - **Names are exact match only.** A name not yet collected is looked up live and tracked in the same call only if one advertiser has exactly that name. Near misses come back as **candidates with nothing tracked** — retry with the exact one (its `organization_id`, or `name` exactly as listed) or ask the user; never track a differently named company. No ads under that name → say so plainly. Short or generic names ("Remote") can surface only lookalikes — then ask the user for the organization ID or the company's LinkedIn URL, or find it.
 - **A vanity slug is not a name.** `linkedin.com/company/acmeanalytics` is only a guess at "Acme Analytics"; if it misses, retry with `name` or the organization ID.
 - **`countries`** (ISO codes such as `["US", "GB", "DE"]`, or `["ALL"]`) sets where a competitor is tracked, in one call; omit it for the default tracking countries. It is **required** on `linkedin_ads_search_ad_library`.
@@ -294,7 +294,7 @@ Before interpreting conversion metrics or ROAS, call `linkedin_ads_get_partner_c
 
 ### Account IDs and URNs
 
-LinkedIn account IDs are **numeric only** — strip any URN prefix, and pass the ID as a string:
+LinkedIn account IDs are **numeric only** — strip any URN prefix, and provide the ID as a string:
 - **Correct:** `"123456789"`
 - **Incorrect:** `urn:li:sponsoredAccount:123456789`
 

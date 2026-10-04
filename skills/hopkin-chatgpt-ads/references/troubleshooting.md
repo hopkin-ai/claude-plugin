@@ -21,7 +21,7 @@ Diagnostics for the Hopkin ChatGPT Ads MCP. Several entries below describe behav
 
 **Resolution:**
 1. Confirm the user has signed up at https://app.hopkin.ai
-2. Confirm the MCP is registered at `https://chatgpt.mcp.hopkin.ai/mcp` with a valid bearer token
+2. Confirm the MCP is registered at `https://chatgpt.mcp.hopkin.ai/mcp` and that the Hopkin plugin's server is signed in
 3. Restart Claude after any configuration change
 
 ---

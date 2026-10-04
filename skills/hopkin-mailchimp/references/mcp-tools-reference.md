@@ -273,7 +273,7 @@ Submit feedback about missing tools, improvements, or workflow gaps.
 
 ## Pagination
 
-List tools support cursor-based pagination. Pass the `cursor` from a previous response to get the next page. Continue until no cursor is returned.
+List tools support cursor-based pagination. Provide the `cursor` from a previous response to get the next page. Continue until no cursor is returned.
 
 ## Error Handling
 

@@ -40,7 +40,7 @@ If no `google_ads_` prefixed tools are available:
 >
 > 1. Sign up at **https://app.hopkin.ai** and connect your account there
 > 2. Make sure the **Hopkin** plugin is installed and enabled. It sets up the hosted `hopkin-google-ads` MCP server (`https://google.mcp.hopkin.ai/mcp`) for you, so there is nothing to configure by hand
-> 3. When Claude asks you to sign in to `hopkin-google-ads`, finish the Hopkin login in your browser. Sign-in uses OAuth, so there is no token to copy or paste
+> 3. When Claude asks you to sign in to `hopkin-google-ads`, finish the Hopkin login in your browser. Sign-in uses OAuth, so there is nothing to copy or paste
 
 4. **Pause execution** until the user confirms MCP installation is complete
 5. **Re-verify** MCP availability after user confirmation
@@ -98,7 +98,7 @@ Some Google Ads users manage multiple client accounts through a Manager (MCC) ac
 - `google_ads_get_insights` — Custom analytics: full control over metrics, segments, and GAQL; use when `google_ads_get_performance_report` does not cover the required custom query. Supports segments including `date`, `device`, `ad_network_type`, and `conversion_action_name`
 
 ### Charts & Visualization
-- `google_ads_render_chart` — **MCP App. ALWAYS use this when the user asks for any chart, graph, map, or visualization.** Do NOT substitute a table or text summary. Supports 6 types: `bar` (compare values across campaigns/placements), `scatter` (correlation between two metrics), `timeseries` (metrics over time), `funnel` (conversion stages), `waterfall` (cumulative contribution), `choropleth` (US state heatmap). Fetch the data first with insights or performance report tools, then pass the structured data here. This renders an interactive visual — it is the correct tool whenever a chart is explicitly requested.
+- `google_ads_render_chart` — **MCP App. ALWAYS use this when the user asks for any chart, graph, map, or visualization.** Do NOT substitute a table or text summary. Supports 6 types: `bar` (compare values across campaigns/placements), `scatter` (correlation between two metrics), `timeseries` (metrics over time), `funnel` (conversion stages), `waterfall` (cumulative contribution), `choropleth` (US state heatmap). Fetch the data first with insights or performance report tools, then provide the structured data here. This renders an interactive visual — it is the correct tool whenever a chart is explicitly requested.
 
 ### Conversion Actions
 - `google_ads_get_conversion_actions` — List conversion actions by status — foundational for understanding what conversions are tracked before interpreting ROAS or conversion metrics. Reports configuration and recent firing volume only; it carries no conversion *value*. For per-conversion-action performance (counts plus value, filterable by campaign and date range), use `google_ads_get_performance_report` and read its `conversion_breakdown` field.

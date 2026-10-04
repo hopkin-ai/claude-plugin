@@ -39,7 +39,7 @@ If no `chatgpt_ads_` prefixed tools are available:
 >
 > 1. Sign up at **https://app.hopkin.ai** and connect your account there
 > 2. Make sure the **Hopkin** plugin is installed and enabled. It sets up the hosted `hopkin-chatgpt-ads` MCP server (`https://chatgpt.mcp.hopkin.ai/mcp`) for you, so there is nothing to configure by hand
-> 3. When Claude asks you to sign in to `hopkin-chatgpt-ads`, finish the Hopkin login in your browser. Sign-in uses OAuth, so there is no token to copy or paste
+> 3. When Claude asks you to sign in to `hopkin-chatgpt-ads`, finish the Hopkin login in your browser. Sign-in uses OAuth, so there is nothing to copy or paste
 
 ### Authentication Flow
 
@@ -64,7 +64,7 @@ This means `chatgpt_ads_list_ad_accounts` lists the user's **connections**, not 
 If the user has more than one connection:
 
 - `chatgpt_ads_list_connections` shows each connection's display name, id, and which is the default
-- Pass `connection_id` to target a specific one
+- Provide `connection_id` to target a specific one
 - `chatgpt_ads_set_default_connection` changes which is used when `connection_id` is omitted
 
 **Naming caveat:** a connection's display name is chosen by the user and may differ from the account's name on the platform. `chatgpt_ads_list_ad_accounts` shows the *connection* name; `chatgpt_ads_get_ad_account` shows the *platform* name. If they disagree, prefer the platform name when reporting and mention the connection name for disambiguation.

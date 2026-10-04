@@ -32,7 +32,7 @@ This guide provides solutions to common issues encountered when using the Meta A
 
 1. Sign up at **https://app.hopkin.ai**
 2. Install and enable the **Hopkin** plugin. It registers the hosted `hopkin-meta-ads` MCP server (`https://meta.mcp.hopkin.ai/mcp`) for you
-3. When Claude asks you to sign in to `hopkin-meta-ads`, finish the Hopkin login in your browser (OAuth, no token needed)
+3. When Claude asks you to sign in to `hopkin-meta-ads`, finish the Hopkin login in your browser (OAuth, nothing to copy or paste)
 
 #### Solution 2: Check the Plugin and Server
 

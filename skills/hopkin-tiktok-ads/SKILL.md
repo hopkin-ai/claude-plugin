@@ -28,7 +28,7 @@ Inform the user and provide setup instructions:
 >
 > 1. Sign up at **https://app.hopkin.ai** and connect your account there
 > 2. Make sure the **Hopkin** plugin is installed and enabled. It sets up the hosted `hopkin-tiktok-ads` MCP server (`https://tiktok.mcp.hopkin.ai/mcp`) for you, so there is nothing to configure by hand
-> 3. When Claude asks you to sign in to `hopkin-tiktok-ads`, finish the Hopkin login in your browser. Sign-in uses OAuth, so there is no token to copy or paste
+> 3. When Claude asks you to sign in to `hopkin-tiktok-ads`, finish the Hopkin login in your browser. Sign-in uses OAuth, so there is nothing to copy or paste
 
 Pause execution until the user confirms, then re-verify.
 

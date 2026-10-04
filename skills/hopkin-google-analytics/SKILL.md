@@ -40,7 +40,7 @@ If no `ga4_` prefixed tools are available:
 >
 > 1. Sign up at **https://app.hopkin.ai** and connect your account there
 > 2. Make sure the **Hopkin** plugin is installed and enabled. It sets up the hosted `hopkin-google-analytics` MCP server (`https://ga4.mcp.hopkin.ai/mcp`) for you, so there is nothing to configure by hand
-> 3. When Claude asks you to sign in to `hopkin-google-analytics`, finish the Hopkin login in your browser. Sign-in uses OAuth, so there is no token to copy or paste
+> 3. When Claude asks you to sign in to `hopkin-google-analytics`, finish the Hopkin login in your browser. Sign-in uses OAuth, so there is nothing to copy or paste
 
 4. **Pause execution** until the user confirms MCP installation is complete
 5. **Re-verify** MCP availability after user confirmation
@@ -96,7 +96,7 @@ All tools use the `ga4_` prefix.
 1. **Property Discovery** — Map out which GA4 accounts and properties the user can access
 2. **Setup Health Audit** — Review data streams, key events, Google Ads links, attribution, and data retention for a property
 3. **Custom Reports** — Any dimensions × metrics combination: traffic by channel, landing page revenue, conversion trends, geographic breakdowns, device splits
-4. **Period Comparisons** — Pass 2-4 date ranges to `ga4_run_report` for period-over-period analysis in a single call
+4. **Period Comparisons** — Provide 2-4 date ranges to `ga4_run_report` for period-over-period analysis in a single call
 5. **Realtime Verification** — Confirm events and key events fire within the last 30 minutes after a tracking change
 
 ### Report Workflow Process
@@ -179,7 +179,7 @@ Users can provide feedback about this skill directly through the Hopkin Google A
 
 - **GA4 standard reports lag by up to 24-48 hours.** Exclude today (and treat yesterday as potentially incomplete) for accurate trend analysis.
 - Use `ga4_run_realtime_report` when the user needs to verify something happening right now — it covers only the last 30 minutes.
-- `ga4_list_account_summaries` results are cached; pass `refresh: true` only when the user expects a newly-added property to appear.
+- `ga4_list_account_summaries` results are cached; provide `refresh: true` only when the user expects a newly-added property to appear.
 
 ### Report Construction
 
@@ -211,7 +211,7 @@ When errors occur:
 1. **Auth errors** — Run `ga4_check_auth_status`; if not authenticated, direct the user to connect their Google account at https://app.hopkin.ai
 2. **403 insufficient scope** — The Google connection predates GA4 support; user must reconnect at https://app.hopkin.ai/settings to grant `analytics.readonly`
 3. **Invalid dimension/metric** — Verify API names with `ga4_get_metadata`
-4. **Property not found** — Verify the property ID with `ga4_list_account_summaries` (pass `refresh: true` if recently added)
+4. **Property not found** — Verify the property ID with `ga4_list_account_summaries` (provide `refresh: true` if recently added)
 5. **Consult troubleshooting guide** — See references/troubleshooting.md
 
 ---

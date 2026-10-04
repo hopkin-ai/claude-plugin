@@ -37,7 +37,7 @@ The Hopkin plugin registers this server for you:
 }
 ```
 
-It signs in with OAuth against the user's Hopkin account at https://app.hopkin.ai. There is no token to configure.
+It signs in with OAuth against the user's Hopkin account at https://app.hopkin.ai. There is nothing else to configure.
 
 ---
 
@@ -67,7 +67,7 @@ Troubleshoot authentication issues and get LinkedIn user profile info. Performs 
 - `authenticated` (boolean)
 - `email` (string)
 - `expires_at` (timestamp) — LinkedIn provider token expiry (60-day TTL)
-- `auth_method` (string) — `jwt` or `api_key`
+- `auth_method` (string) — `jwt` (OAuth sign-in) or the Hopkin API-key method
 - `linkedin_member_id` (string) — Opaque LinkedIn member ID
 - `linkedin_name` (string) — LinkedIn display name
 - `linkedin_scopes` (array) — Scopes granted on provider token
@@ -236,7 +236,7 @@ Supports up to 3 pivots, e.g. ACCOUNT, CAMPAIGN_GROUP, CAMPAIGN or CREATIVE. **D
 
 **Returns:**
 - Full funnel metrics: impressions, clicks, spend, conversions, leads, video views, CTR, CPC, CPA, ROAS
-- `conversion_breakdown` — per-conversion-action metrics (on by default; pass `include_conversion_breakdown: false` to skip the extra call)
+- `conversion_breakdown` — per-conversion-action metrics (on by default; provide `include_conversion_breakdown: false` to skip the extra call)
 
 **Example — Campaign group overview:**
 ```json
@@ -554,7 +554,7 @@ Optional: `tip`, `colorScheme`, `colorType`.
 
 ### Connection Tools
 
-A connection is one LinkedIn sign-in that Hopkin uses to read ad accounts. A user can have several: their own, and ones teammates share with the organization. Account and reporting tools use the **default** connection unless you pass `connection_id`.
+A connection is one LinkedIn sign-in that Hopkin uses to read ad accounts. A user can have several: their own, and ones teammates share with the organization. Account and reporting tools use the **default** connection unless you provide `connection_id`.
 
 Only call the write tools below when the user asks. Confirm the destructive ones (`unshare`, `revoke`) with the user first.
 
@@ -621,7 +621,7 @@ Three things shape how they behave:
 #### linkedin_ads_search_ad_library
 Search the LinkedIn Ad Library for any advertiser's ads. Served from the collected library. When the library has nothing for an organization ID, a name or a keyword query, the public Ad Library is searched live: the first page of results comes back in the same call (usually well under a minute), and the rest is collected in the background (see `collection` below). No tracking needed.
 
-**To see ONE company's ads, pass `organization_ids` with its organization ID (exact) when you know it, else `advertiser_name`** — `search_terms` reads ad *copy*, which rarely names the advertiser, so a keyword search for a company name returns other companies' ads.
+**To see ONE company's ads, provide `organization_ids` with its organization ID (exact) when you know it, else `advertiser_name`** — `search_terms` reads ad *copy*, which rarely names the advertiser, so a keyword search for a company name returns other companies' ads.
 
 **Parameters:**
 - `reason` (string, required) — Reason for the call
@@ -849,7 +849,7 @@ Submit feedback or feature requests to the Hopkin development team. Use this too
 ### Pattern 1: Session Start — Account Selection
 **Workflow:**
 1. If the user named no account, call `linkedin_ads_list_ad_accounts` and present a numbered list if multiple accounts are found
-2. If the account the user expects is missing, call `linkedin_ads_list_connections` — it may be under another connection; pass that connection's `connection_id`, or set it as the default with `linkedin_ads_set_default_connection` if the user asks
+2. If the account the user expects is missing, call `linkedin_ads_list_connections` — it may be under another connection; provide that connection's `connection_id`, or set it as the default with `linkedin_ads_set_default_connection` if the user asks
 3. Competitor research needs no account at all — skip this pattern for it
 
 ### Pattern 2: Account Overview & Performance Report

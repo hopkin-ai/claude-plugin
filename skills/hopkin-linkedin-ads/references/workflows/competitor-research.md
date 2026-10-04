@@ -23,8 +23,8 @@ These tools read Hopkin's collected copy of the public LinkedIn Ad Library. **No
 
 LinkedIn's Ad Library can look up an advertiser two ways: by its numeric **organization ID** (exact), or by its **display name**, the way it appears on its LinkedIn company page ("Acme Analytics"), which is a fuzzy search. So:
 
-- **To track, prefer `organization_id`** on `linkedin_ads_track_competitor`: the number in `linkedin.com/company/<id>`, or in an Ad Library URL's `companyIds=`. Or pass the URL the user pasted as `company_url`: a numeric company URL, or an Ad Library URL with one `companyIds=`, resolves exactly like the ID. An organization nobody has collected yet is **looked up live** (about 20–40 seconds) and tracked in the same call under its real name. An ID with no ads gets a plain "no ads" answer, and nothing is tracked.
-- **When you only have a name, pass `name`** to `linkedin_ads_track_competitor`. To see one company's ads without tracking, pass **`organization_ids`** to `linkedin_ads_search_ad_library` when you have the ID (exact, and looked up live if never collected), else **`advertiser_name`**.
+- **To track, prefer `organization_id`** on `linkedin_ads_track_competitor`: the number in `linkedin.com/company/<id>`, or in an Ad Library URL's `companyIds=`. Or provide the URL the user pasted as `company_url`: a numeric company URL, or an Ad Library URL with one `companyIds=`, resolves exactly like the ID. An organization nobody has collected yet is **looked up live** (about 20–40 seconds) and tracked in the same call under its real name. An ID with no ads gets a plain "no ads" answer, and nothing is tracked.
+- **When you only have a name, provide `name`** to `linkedin_ads_track_competitor`. To see one company's ads without tracking, provide **`organization_ids`** to `linkedin_ads_search_ad_library` when you have the ID (exact, and looked up live if never collected), else **`advertiser_name`**.
 - A name nobody has collected yet is also looked up live. Only an **exact** name match is used. Similarly named advertisers come back as candidates. They are never tracked or shown as if they were the company. Short or generic names ("Remote") can surface only lookalikes: ask the user for the organization ID or the company's LinkedIn URL, or find it, and track by ID.
 - **A company-page vanity slug is not a name.** `linkedin.com/company/acmeanalytics` gives the slug `acmeanalytics`, which is only a guess at the name and often matches nothing, while "Acme Analytics" does. If a URL-based track finds nothing, retry with the organization ID or with `name` set to the company's real name. If you know neither, ask the user.
 
@@ -77,7 +77,7 @@ If you have the organization ID (from a `linkedin.com/company/<id>` or Ad Librar
 }
 ```
 
-With only a name, pass `advertiser_name`:
+With only a name, provide `advertiser_name`:
 
 ```json
 {
@@ -91,10 +91,10 @@ With only a name, pass `advertiser_name`:
 ```
 
 - `countries` is **required**: ISO codes such as `["US", "GB"]` (use `GB`, not `UK`), or `["ALL"]`.
-- `ad_active_status` defaults to `ACTIVE`. Pass `ALL` to include stopped ads. `INACTIVE` cannot be filtered exactly: it returns everything and says so in `warnings`.
+- `ad_active_status` defaults to `ACTIVE`. Provide `ALL` to include stopped ads. `INACTIVE` cannot be filtered exactly: it returns everything and says so in `warnings`.
 - For "new this month", add `ad_delivery_date_min` (e.g. `"2026-09-01"`). LinkedIn only shows run dates on an ad's detail page, so ads without a known start date are excluded by the date bounds. Relay that caveat when it appears in `warnings`.
 - Filter by format with `display_format` and by language with `languages` (language **names** such as `"English"`).
-- Pass either `advertiser_name` or `organization_ids`, not both.
+- Provide either `advertiser_name` or `organization_ids`, not both.
 - **One live lookup per call.** With several IDs, only the first valid one is looked up live, and `warnings` names the others. If some IDs are already collected, the answer comes from those, and `warnings` names the uncollected ones. Call again with the named IDs to look them up. Don't report them as having no ads.
 - Only a clean organization ID is looked up (digits, no leading zero). A `name:` value from `list_tracked_competitors` is searched by its stored name.
 
@@ -200,7 +200,7 @@ Filters: `active_only`, `display_format`, `since` (seen on/after a date), `searc
 
 This returns the complete copy (headline, primary text, description, CTA), landing URL, run and seen dates, and every media asset. Images and video thumbnails come back **inline as images you can see**.
 
-- **To describe what a video actually shows**, pass `include_frames: true`. Extracted frames come back as images, capped at about 40. Use `start` / `end` (seconds) and `stride` to page through long videos. The structured result also carries `frame_count` / `frame_fps` (duration ≈ `frame_count / frame_fps`), the voiceover `transcript`, and an audio analysis.
+- **To describe what a video actually shows**, provide `include_frames: true`. Extracted frames come back as images, capped at about 40. Use `start` / `end` (seconds) and `stride` to page through long videos. The structured result also carries `frame_count` / `frame_fps` (duration ≈ `frame_count / frame_fps`), the voiceover `transcript`, and an audio analysis.
 - Media not yet processed falls back to source URLs with a note. A silent audio track is reported as silent, not as missing speech.
 
 ### Scenario D: Employee posts a company pays for
@@ -254,7 +254,7 @@ This removes only the user's tracking. Ads already collected stay available. Unt
 | Tracking by vanity slug and stopping when it misses | Retry with `name` set to the real company name |
 | Tracking a candidate whose name is only similar | Exact name only; otherwise ask the user |
 | Calling `track_competitor` once per country | One call with `countries: ["US", "GB", "DE"]` |
-| Passing the organization ID to `list_competitor_ads` | Pass the Hopkin `advertiser_id` |
+| Providing the organization ID to `list_competitor_ads` | Provide the Hopkin `advertiser_id` |
 | "They have no ads" right after tracking | "The full collection is still running — check back in a few minutes" |
 | Treating a search with `collection` as the complete list, or hunting for a cursor | Relay `collection.message`; call again later with the same parameters and no cursor |
 | Quoting a `details_status: "pending"` preview as the full ad | Say the full copy and dates are still being fetched |

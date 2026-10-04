@@ -38,7 +38,7 @@ The Hopkin plugin registers this server for you:
 }
 ```
 
-It signs in with OAuth against the user's Hopkin account at https://app.hopkin.ai. There is no token to configure.
+It signs in with OAuth against the user's Hopkin account at https://app.hopkin.ai. There is nothing else to configure.
 
 ---
 
@@ -73,7 +73,7 @@ Check whether the user has authenticated their Meta Ads account. Returns user pr
 ### Account Tools
 
 #### meta_ads_list_ad_accounts
-List all ad accounts accessible to the authenticated user. Supports search by name, status filtering, single/multi-account lookup by ID, and pagination. Pass `account_id` to look up a specific account.
+List all ad accounts accessible to the authenticated user. Supports search by name, status filtering, single/multi-account lookup by ID, and pagination. Provide `account_id` to look up a specific account.
 
 **Parameters:**
 - `reason` (string, required) — Reason for the call
@@ -100,7 +100,7 @@ List all ad accounts accessible to the authenticated user. Supports search by na
 ### Campaign Tools
 
 #### meta_ads_list_campaigns
-List campaigns for an ad account. Supports status filtering, name search, single/multi-campaign lookup by ID, and pagination. Pass `campaign_id` to look up a specific campaign.
+List campaigns for an ad account. Supports status filtering, name search, single/multi-campaign lookup by ID, and pagination. Provide `campaign_id` to look up a specific campaign.
 
 **Parameters:**
 - `reason` (string, required) — Reason for the call
@@ -129,7 +129,7 @@ List campaigns for an ad account. Supports status filtering, name search, single
 ### Ad Set Tools
 
 #### meta_ads_list_adsets
-List ad sets for an account or campaign. Supports campaign filtering, status filtering, name search, single/multi-adset lookup by ID, and pagination. Pass `adset_id` to look up a specific ad set.
+List ad sets for an account or campaign. Supports campaign filtering, status filtering, name search, single/multi-adset lookup by ID, and pagination. Provide `adset_id` to look up a specific ad set.
 
 **Parameters:**
 - `reason` (string, required) — Reason for the call
@@ -147,7 +147,7 @@ List ad sets for an account or campaign. Supports campaign filtering, status fil
 ### Ad Tools
 
 #### meta_ads_list_ads
-List ads for an account, campaign, or ad set. Supports adset filtering, status filtering, name search, single/multi-ad lookup by ID, and pagination. Pass `ad_id` to look up a specific ad.
+List ads for an account, campaign, or ad set. Supports adset filtering, status filtering, name search, single/multi-ad lookup by ID, and pagination. Provide `ad_id` to look up a specific ad.
 
 **Parameters:**
 - `reason` (string, required) — Reason for the call
@@ -176,7 +176,7 @@ This tool always includes a full funnel of metrics: impressions, reach, frequenc
 - `time_range` (object, required) — Date range with `since` and `until` (YYYY-MM-DD format)
 - `level` (string, optional) — Aggregation level: `"account"` (default), `"campaign"`, `"adset"`, or `"ad"`
 - `time_increment` (number or string, optional) — Time grouping: `1` for daily, `7` for weekly, `"monthly"`, `"all_days"` for a single row over the entire range
-- `breakdowns` (array, optional) — Segment data by dimension (e.g., `["age", "gender"]`). Pass multiple values in a single call to get cross-tabulated rows — do NOT make separate calls per dimension.
+- `breakdowns` (array, optional) — Segment data by dimension (e.g., `["age", "gender"]`). Provide multiple values in a single call to get cross-tabulated rows — do NOT make separate calls per dimension.
 - `filtering` (array, optional) — Filters as `[{field, operator, value}]`
 - `attributionWindows` (array, optional) — Attribution window settings that control how conversions are counted. Each value specifies a click or view window (e.g., `["1d_click", "7d_click", "1d_view"]`). When omitted, Meta uses the account's default attribution window. See [Attribution Windows](#attribution-windows) for full details.
 
@@ -352,7 +352,7 @@ Use this tool when users ask about:
 #### meta_ads_preview_ads
 **MCP App** — Renders a visual UI with actual ad creative content (images/videos) and a configurable metrics overlay. This is distinct from tabular data tools: it returns an interactive visual panel, not a data table. Proactively offer this whenever the user asks "what do my ads look like", wants to review creative quality, or is doing A/B creative comparison.
 
-Use `meta_ads_get_ad_creative_report` to get ad metrics and representative ad IDs in a single call, then pass them to this tool. The `ad_id` values from the creative report (including representative IDs in `ad_name` mode) work directly here — no separate `meta_ads_list_ads` call needed.
+Use `meta_ads_get_ad_creative_report` to get ad metrics and representative ad IDs in a single call, then provide them to this tool. The `ad_id` values from the creative report (including representative IDs in `ad_name` mode) work directly here — no separate `meta_ads_list_ads` call needed.
 
 **Parameters:**
 - `reason` (string, required) — Reason for the call
@@ -657,7 +657,7 @@ Different attribution windows can report significantly different conversion coun
 
 ### Usage
 
-Pass one or more values as an array. When multiple windows are specified, Meta returns results for each window — enabling side-by-side comparison.
+Provide one or more values as an array. When multiple windows are specified, Meta returns results for each window — enabling side-by-side comparison.
 
 **Example — Compare 1-day vs 7-day click attribution:**
 ```json

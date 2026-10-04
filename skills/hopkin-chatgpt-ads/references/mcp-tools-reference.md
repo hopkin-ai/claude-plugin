@@ -226,4 +226,4 @@ Submit feedback about missing tools, improvements, bugs, or workflow gaps in the
 
 ## Pagination
 
-List tools use opaque cursors. Pass `limit` and `cursor`; read `nextCursor` from the response and pass it back to get the next page. Cursors are not constructible — never build one by hand. When `nextCursor` is absent, there are no more pages.
+List tools use opaque cursors. Provide `limit` and `cursor`; read `nextCursor` from the response and provide it back to get the next page. Cursors are not constructible — never build one by hand. When `nextCursor` is absent, there are no more pages.

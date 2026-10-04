@@ -24,7 +24,7 @@ Troubleshoot authentication issues. **Only use when another tool fails with a pe
 
 ### ga4_list_account_summaries
 
-List every GA4 account and property visible to the connected Google account (Admin API accountSummaries). **Use this tool first** to discover which properties are available before calling other GA4 tools. Results are cached; pass `refresh: true` only when you need the latest list.
+List every GA4 account and property visible to the connected Google account (Admin API accountSummaries). **Use this tool first** to discover which properties are available before calling other GA4 tools. Results are cached; provide `refresh: true` only when you need the latest list.
 
 **Parameters:**
 

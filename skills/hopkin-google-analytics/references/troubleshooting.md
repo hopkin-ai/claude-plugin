@@ -35,14 +35,14 @@ GA4 access requires the `https://www.googleapis.com/auth/analytics.readonly` Goo
 ### Wrong Google account / missing properties
 
 - Call `ga4_list_connections` to see which Google connections are available (owned and org-shared)
-- Use `ga4_set_default_connection` to switch the default, or pass `connection_id` on individual calls to pin a specific connection
+- Use `ga4_set_default_connection` to switch the default, or provide `connection_id` on individual calls to pin a specific connection
 
 ## Data Issues
 
 ### "Property not found" or permission denied on a property
 
 1. Verify the property ID with `ga4_list_account_summaries`
-2. If the property was added recently, pass `refresh: true` to bypass the cached account list
+2. If the property was added recently, provide `refresh: true` to bypass the cached account list
 3. Confirm the connected Google account actually has access to that property in GA4
 
 ### "Invalid dimension or metric" errors

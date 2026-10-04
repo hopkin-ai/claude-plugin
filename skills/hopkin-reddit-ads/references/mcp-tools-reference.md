@@ -40,7 +40,7 @@ The Hopkin plugin registers this server for you:
 }
 ```
 
-It signs in with OAuth against the user's Hopkin account at https://app.hopkin.ai. There is no token to configure.
+It signs in with OAuth against the user's Hopkin account at https://app.hopkin.ai. There is nothing else to configure.
 
 ---
 
@@ -515,7 +515,7 @@ Hopkin list tools use cursor-based pagination:
 ## Visualization Tools
 
 ### reddit_ads_render_chart
-Render a data visualization chart as an interactive MCP App UI. **Always call this when the user requests a chart, graph, map, or visualization** — never substitute a table or text summary. Fetch performance data first with reporting tools, then pass the structured data here.
+Render a data visualization chart as an interactive MCP App UI. **Always call this when the user requests a chart, graph, map, or visualization** — never substitute a table or text summary. Fetch performance data first with reporting tools, then provide the structured data here.
 
 **Parameters:**
 - `reason` (string, required) — Brief explanation of the insight being shown

@@ -28,7 +28,7 @@ Inform the user and provide setup instructions:
 >
 > 1. Sign up at **https://app.hopkin.ai** and connect your account there
 > 2. Make sure the **Hopkin** plugin is installed and enabled. It sets up the hosted `hopkin-reddit-ads` MCP server (`https://reddit.mcp.hopkin.ai/mcp`) for you, so there is nothing to configure by hand
-> 3. When Claude asks you to sign in to `hopkin-reddit-ads`, finish the Hopkin login in your browser. Sign-in uses OAuth, so there is no token to copy or paste
+> 3. When Claude asks you to sign in to `hopkin-reddit-ads`, finish the Hopkin login in your browser. Sign-in uses OAuth, so there is nothing to copy or paste
 
 Pause execution until the user confirms, then re-verify.
 
@@ -85,7 +85,7 @@ No MCC equivalent — all accounts are accessible directly; no `login_customer_i
 - `reddit_ads_get_account_summary` — Account-level summary. Params: `account_id` (required), `date_start` (YYYY-MM-DD, required), `date_end` (YYYY-MM-DD, required), `reason`
 
 ### Visualization
-- `reddit_ads_render_chart` — Render interactive data visualization charts as MCP App UI. **Always call this when the user requests a chart, graph, map, or visualization** — never substitute a table or text summary. Fetch data first, then pass it here. Params: `chart` (config with type + data), `reason`. Chart types: `bar`, `scatter`, `timeseries`, `funnel`, `waterfall`, `choropleth`
+- `reddit_ads_render_chart` — Render interactive data visualization charts as MCP App UI. **Always call this when the user requests a chart, graph, map, or visualization** — never substitute a table or text summary. Fetch data first, then provide it here. Params: `chart` (config with type + data), `reason`. Chart types: `bar`, `scatter`, `timeseries`, `funnel`, `waterfall`, `choropleth`
 
 ### Preferences
 - `reddit_ads_store_preference` — Store a persistent preference for a Reddit ad entity (infer from recurring patterns). Params: `entity_type` (ad_account|campaign|ad_set|ad), `entity_id`, `key`, `value`, `reason`
