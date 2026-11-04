@@ -30,7 +30,7 @@ This guide provides solutions to common issues encountered when using the Meta A
 
 #### Solution 1: Install the Hopkin Plugin and Sign In
 
-1. Sign up at **https://app.hopkin.ai**
+1. Sign up at **https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=meta-ads**
 2. Install and enable the **Hopkin** plugin. It registers the hosted `hopkin-meta-ads` MCP server (`https://meta.mcp.hopkin.ai/mcp`) for you
 3. When Claude asks you to sign in to `hopkin-meta-ads`, finish the Hopkin login in your browser (OAuth, nothing to copy or paste)
 
@@ -343,4 +343,4 @@ When encountering issues, work through this checklist:
 
 **Document Version:** 2.0
 **Last Updated:** 2026-02-10
-**Service:** Hopkin Meta Ads MCP (https://app.hopkin.ai)
+**Service:** Hopkin Meta Ads MCP (https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=meta-ads)

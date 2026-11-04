@@ -30,7 +30,7 @@ This guide provides solutions to common issues encountered when using the Google
 
 #### Solution 1: Install the Hopkin Plugin and Sign In
 
-1. Sign up at **https://app.hopkin.ai**
+1. Sign up at **https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=google-ads**
 2. Install and enable the **Hopkin** plugin. It registers the hosted `hopkin-google-ads` MCP server (`https://google.mcp.hopkin.ai/mcp`) for you
 3. When Claude asks you to sign in to `hopkin-google-ads`, finish the Hopkin login in your browser (OAuth, nothing to copy or paste)
 
@@ -76,7 +76,7 @@ After installing or configuring the MCP server:
    }
    ```
 
-2. If not authenticated, direct the user to https://app.hopkin.ai to connect (or reconnect) their Google Ads account
+2. If not authenticated, direct the user to https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=google-ads to connect (or reconnect) their Google Ads account
 
 3. After the user has connected, run `google_ads_check_auth_status` again to confirm
 
@@ -134,7 +134,7 @@ If accessing a client account through a manager account:
 **Solutions:**
 
 #### Solution 1: Re-authenticate
-Have the user reconnect their Google Ads account at https://app.hopkin.ai, granting access to the correct accounts, then run `google_ads_check_auth_status` again.
+Have the user reconnect their Google Ads account at https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=google-ads, granting access to the correct accounts, then run `google_ads_check_auth_status` again.
 
 #### Solution 2: Check Account Access
 1. Log into Google Ads with admin access
@@ -208,7 +208,7 @@ Remove optional filters and try with minimal parameters first.
 
 #### Authentication Error
 **Cause:** Session expired or authentication issue
-**Solution:** Re-run auth flow: `google_ads_check_auth_status` → user reconnects at https://app.hopkin.ai → `google_ads_check_auth_status`
+**Solution:** Re-run auth flow: `google_ads_check_auth_status` → user reconnects at https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=google-ads → `google_ads_check_auth_status`
 
 #### Invalid Customer ID
 **Cause:** Customer ID format incorrect or inaccessible
@@ -279,7 +279,7 @@ When encountering issues, work through this checklist:
 
 - [ ] **Authentication**
   - [ ] `google_ads_check_auth_status` returns authenticated
-  - [ ] User has connected their Google Ads account at https://app.hopkin.ai if needed
+  - [ ] User has connected their Google Ads account at https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=google-ads if needed
 
 - [ ] **Permissions**
   - [ ] User has access to target customer account
@@ -305,7 +305,7 @@ When encountering issues, work through this checklist:
 → Check: Date range, campaign status, query filters
 
 **"Not authenticated"**
-→ Run: `google_ads_check_auth_status` → user reconnects at https://app.hopkin.ai → `google_ads_check_auth_status`
+→ Run: `google_ads_check_auth_status` → user reconnects at https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=google-ads → `google_ads_check_auth_status`
 
 **"Rate limit exceeded"**
 → Check: Request frequency, implement backoff, reduce query scope
@@ -314,4 +314,4 @@ When encountering issues, work through this checklist:
 
 **Document Version:** 2.0
 **Last Updated:** 2026-02-10
-**Service:** Hopkin Google Ads MCP (https://app.hopkin.ai)
+**Service:** Hopkin Google Ads MCP (https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=google-ads)

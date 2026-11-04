@@ -1,7 +1,7 @@
 {
   "name": "hopkin",
   "displayName": "Hopkin",
-  "version": "1.22.0",
+  "version": "1.23.0",
   "description": "Analyze ad performance, email marketing, search console, and web analytics data across Google, Meta, LinkedIn, Reddit, TikTok, ChatGPT Ads, Mailchimp, Google Search Console, and Google Analytics directly in Claude using Hopkin MCPs",
   "author": {
     "name": "Hopkin",
@@ -10,7 +10,7 @@
   "homepage": "https://www.hopkin.ai",
   "repository": "https://github.com/hopkin-ai/claude-plugin",
   "license": "MIT",
-  "icon": "./.claude-plugin/icon.png",
+  "icon": "https://raw.githubusercontent.com/hopkin-ai/claude-plugin/main/.claude-plugin/icon.png",
   "documentationUrl": "https://www.hopkin.ai/docs/getting-started",
   "supportUrl": "https://github.com/hopkin-ai/claude-plugin/issues",
   "privacyPolicyUrl": "https://www.hopkin.ai/privacy-policy",

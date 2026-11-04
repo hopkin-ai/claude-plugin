@@ -39,7 +39,7 @@ Then install the **Hopkin** plugin.
 
 ### Connect your accounts
 
-The plugin requires a Hopkin account. Sign up at [hopkin.ai](https://www.hopkin.ai). The first time Claude uses a Hopkin tool, it walks you through a one-time OAuth login at [app.hopkin.ai](https://app.hopkin.ai), where you connect the ad and analytics accounts you want Claude to read.
+The plugin requires a Hopkin account. Sign up at [hopkin.ai](https://www.hopkin.ai). The first time Claude uses a Hopkin tool, it walks you through a one-time OAuth login at [app.hopkin.ai](https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=readme&utm_content=readme), where you connect the ad and analytics accounts you want Claude to read.
 
 ## What's included
 

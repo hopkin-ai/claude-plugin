@@ -30,7 +30,7 @@ This guide provides solutions to common issues encountered when using the Reddit
 
 #### Solution 1: Install the Hopkin Plugin and Sign In
 
-1. Sign up at **https://app.hopkin.ai**
+1. Sign up at **https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=reddit-ads**
 2. Install and enable the **Hopkin** plugin. It registers the hosted `hopkin-reddit-ads` MCP server (`https://reddit.mcp.hopkin.ai/mcp`) for you
 3. When Claude asks you to sign in to `hopkin-reddit-ads`, finish the Hopkin login in your browser (OAuth, nothing to copy or paste)
 
@@ -63,7 +63,7 @@ After installing or configuring the MCP server:
 #### Solution 1: Run the Authentication Flow
 
 1. Call `reddit_ads_check_auth_status` to verify current status
-2. If not authenticated, direct the user to connect their Reddit Ads account via https://app.hopkin.ai
+2. If not authenticated, direct the user to connect their Reddit Ads account via https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=reddit-ads
 3. After the user completes the OAuth flow, re-verify with `reddit_ads_check_auth_status`
 
 #### Solution 2: Reddit Token Auto-Refresh
@@ -72,7 +72,7 @@ Reddit provider tokens expire after **1 hour**, but Hopkin automatically refresh
 
 **If auto-refresh fails:**
 - `reddit_ads_check_auth_status` will show `authenticated: false`
-- Direct the user to https://app.hopkin.ai to reconnect their Reddit account
+- Direct the user to https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=reddit-ads to reconnect their Reddit account
 - After reconnection, re-verify with `reddit_ads_check_auth_status`
 
 ---
@@ -89,7 +89,7 @@ Reddit provider tokens expire after **1 hour**, but Hopkin automatically refresh
 
 #### Solution 1: Re-authenticate with Correct Scopes
 
-1. Direct the user to https://app.hopkin.ai
+1. Direct the user to https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=reddit-ads
 2. Ask them to disconnect and reconnect their Reddit account
 3. Ensure they grant all requested permissions during the OAuth flow
 
@@ -191,14 +191,14 @@ Reddit provider tokens expire after **1 hour**, but Hopkin automatically refresh
 
 **Solutions:**
 - Call `reddit_ads_check_auth_status` to confirm token status
-- Hopkin auto-refreshes Reddit tokens (1-hour expiry), but if refresh fails, direct user to https://app.hopkin.ai to reconnect
+- Hopkin auto-refreshes Reddit tokens (1-hour expiry), but if refresh fails, direct user to https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=reddit-ads to reconnect
 
 #### Forbidden / 403
 **Cause:** Insufficient permissions or attempting a write operation.
 
 **Solutions:**
 - Verify the user has access to the target ad account
-- Re-authenticate via https://app.hopkin.ai
+- Re-authenticate via https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=reddit-ads
 - Confirm this is a read operation (MCP is read-only)
 
 ---
@@ -258,7 +258,7 @@ When encountering issues, work through this checklist:
 - [ ] **Authentication**
   - [ ] `reddit_ads_check_auth_status` returns `authenticated: true`
   - [ ] Reddit token is valid (auto-refreshed by Hopkin, 1-hour expiry)
-  - [ ] User has completed OAuth flow via https://app.hopkin.ai
+  - [ ] User has completed OAuth flow via https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=reddit-ads
 
 - [ ] **Permissions**
   - [ ] User has access to target ad account
@@ -288,7 +288,7 @@ When encountering issues, work through this checklist:
 -> Check: Hopkin plugin enabled and its server signed in, restart Claude
 
 **"Not authenticated"**
--> Run: `reddit_ads_check_auth_status` -> Direct user to https://app.hopkin.ai
+-> Run: `reddit_ads_check_auth_status` -> Direct user to https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=reddit-ads
 
 **"Account not found"**
 -> Check: Account ID is a plain string, user has account access
@@ -309,4 +309,4 @@ When encountering issues, work through this checklist:
 
 **Document Version:** 1.0
 **Last Updated:** 2026-03-16
-**Service:** Hopkin Reddit Ads MCP (https://app.hopkin.ai)
+**Service:** Hopkin Reddit Ads MCP (https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=reddit-ads)
