@@ -33,12 +33,12 @@ To verify the Hopkin Google Ads MCP is available:
 If no `google_ads_` prefixed tools are available:
 
 1. **Inform the user** that the Hopkin Google Ads MCP is required to use this skill
-2. **Direct them to sign up** at https://app.hopkin.ai
+2. **Direct them to sign up** at https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=google-ads
 3. **Provide setup instructions:**
 
 > The Hopkin Google Ads MCP is not connected. To use this skill:
 >
-> 1. Sign up at **https://app.hopkin.ai** and connect your account there
+> 1. Sign up at **https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=google-ads** and connect your account there
 > 2. Make sure the **Hopkin** plugin is installed and enabled. It sets up the hosted `hopkin-google-ads` MCP server (`https://google.mcp.hopkin.ai/mcp`) for you, so there is nothing to configure by hand
 > 3. When Claude asks you to sign in to `hopkin-google-ads`, finish the Hopkin login in your browser. Sign-in uses OAuth, so there is nothing to copy or paste
 
@@ -50,7 +50,7 @@ If no `google_ads_` prefixed tools are available:
 After confirming the MCP is available, authenticate the user's Google Ads account:
 
 1. **Check auth status:** Call `google_ads_check_auth_status` to see if the user is already authenticated
-2. **If not authenticated:** Inform the user that they need to connect their Google Ads account via https://app.hopkin.ai and follow the OAuth flow there
+2. **If not authenticated:** Inform the user that they need to connect their Google Ads account via https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=google-ads and follow the OAuth flow there
 
 ### Required Information
 
@@ -368,7 +368,7 @@ When users provide customer IDs with hyphens, remove them before making API call
 
 When errors occur:
 
-1. **Check authentication** — Run `google_ads_check_auth_status`; if not authenticated, direct the user to connect their account at https://app.hopkin.ai
+1. **Check authentication** — Run `google_ads_check_auth_status`; if not authenticated, direct the user to connect their account at https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=google-ads
 2. **Validate inputs** — Ensure customer ID is 10 digits with no hyphens
 3. **Inspect error messages** — Hopkin errors include specific guidance
 4. **Retry with adjusted parameters** — Try shorter date ranges or simpler queries
@@ -383,7 +383,7 @@ For detailed troubleshooting guidance, see **references/troubleshooting.md**.
 Common quick fixes:
 
 - **"MCP server not found"** — Check that the Hopkin plugin is enabled and its server is signed in
-- **"Not authenticated"** — Run `google_ads_check_auth_status`; direct user to connect their account at https://app.hopkin.ai
+- **"Not authenticated"** — Run `google_ads_check_auth_status`; direct user to connect their account at https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=google-ads
 - **"Invalid customer ID"** — Remove hyphens from customer ID (use 1234567890, not 123-456-7890)
 - **"Account not found"** — Verify customer ID and account access
 - **"No data available"** — Check date range and campaign activity during period
@@ -406,4 +406,4 @@ For more detailed information:
 
 ---
 
-**Requires:** Hopkin Google Ads MCP (https://app.hopkin.ai)
+**Requires:** Hopkin Google Ads MCP (https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=google-ads)

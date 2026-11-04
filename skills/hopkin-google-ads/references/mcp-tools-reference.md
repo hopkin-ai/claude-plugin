@@ -19,7 +19,7 @@ This document provides detailed reference information for the Hopkin Google Ads 
 ### Hopkin Google Ads MCP
 
 - **Service:** Hopkin — hosted MCP service
-- **Sign up:** https://app.hopkin.ai
+- **Sign up:** https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=google-ads
 - **Type:** Hosted MCP (OAuth sign-in, no local installation)
 
 ### Configuration
@@ -37,13 +37,13 @@ The Hopkin plugin registers this server for you:
 }
 ```
 
-It signs in with OAuth against the user's Hopkin account at https://app.hopkin.ai. There is nothing else to configure.
+It signs in with OAuth against the user's Hopkin account at https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=google-ads. There is nothing else to configure.
 
 ---
 
 ## Authentication & Connection
 
-Hopkin uses OAuth. If a tool call fails with an auth error, call `google_ads_check_auth_status` to check. If not authenticated, direct the user to https://app.hopkin.ai to connect their Google Ads account.
+Hopkin uses OAuth. If a tool call fails with an auth error, call `google_ads_check_auth_status` to check. If not authenticated, direct the user to https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=google-ads to connect their Google Ads account.
 
 ---
 
@@ -1076,14 +1076,14 @@ Hopkin tools use cursor-based pagination:
 
 ### Common Error Types
 
-- **Authentication errors** — User not authenticated or session expired. Call `google_ads_check_auth_status` to confirm, then direct the user to connect their account at https://app.hopkin.ai.
+- **Authentication errors** — User not authenticated or session expired. Call `google_ads_check_auth_status` to confirm, then direct the user to connect their account at https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=google-ads.
 - **Invalid customer ID** — Ensure customer ID is 10 digits with no hyphens
 - **Rate limiting** — Wait and retry with exponential backoff
 - **Account not found** — Verify customer ID and user access
 
 ### Error Handling Best Practices
 
-1. **Always check auth first** — If tools return auth errors, run `google_ads_check_auth_status` and direct the user to https://app.hopkin.ai to re-authenticate
+1. **Always check auth first** — If tools return auth errors, run `google_ads_check_auth_status` and direct the user to https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=google-ads to re-authenticate
 2. **Validate customer ID format** — 10 digits, no hyphens (1234567890 not 123-456-7890)
 3. **Handle pagination** — Don't assume all results are in the first page
 4. **Provide clear messages** — Translate errors into user-friendly guidance
@@ -1092,4 +1092,4 @@ Hopkin tools use cursor-based pagination:
 
 **Document Version:** 2.3
 **Last Updated:** 2026-03-22
-**Service:** Hopkin Google Ads MCP (https://app.hopkin.ai)
+**Service:** Hopkin Google Ads MCP (https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=google-ads)

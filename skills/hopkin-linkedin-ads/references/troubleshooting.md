@@ -31,7 +31,7 @@ This guide provides solutions to common issues encountered when using the Linked
 
 #### Solution 1: Install the Hopkin Plugin and Sign In
 
-1. Sign up at **https://app.hopkin.ai**
+1. Sign up at **https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=linkedin-ads**
 2. Install and enable the **Hopkin** plugin. It registers the hosted `hopkin-linkedin-ads` MCP server (`https://linkedin.mcp.hopkin.ai/mcp`) for you
 3. When Claude asks you to sign in to `hopkin-linkedin-ads`, finish the Hopkin login in your browser (OAuth, nothing to copy or paste)
 
@@ -64,7 +64,7 @@ After installing or configuring the MCP server:
 #### Solution 1: Run the Authentication Flow
 
 1. Call `linkedin_ads_check_auth_status` to verify current status
-2. If not authenticated, direct the user to connect their LinkedIn Ads account via https://app.hopkin.ai
+2. If not authenticated, direct the user to connect their LinkedIn Ads account via https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=linkedin-ads
 3. After the user completes the OAuth flow, re-verify with `linkedin_ads_check_auth_status`
 
 #### Solution 2: LinkedIn Token Expired (60-Day TTL)
@@ -75,7 +75,7 @@ LinkedIn provider tokens expire after **60 days**. Unlike Meta and Google, Linke
 
 **Resolution:**
 1. Inform the user: "Your LinkedIn connection has expired. LinkedIn tokens expire every 60 days."
-2. Direct them to https://app.hopkin.ai to reconnect their LinkedIn account
+2. Direct them to https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=linkedin-ads to reconnect their LinkedIn account
 3. After reconnection, re-verify with `linkedin_ads_check_auth_status`
 
 **Prevention:**
@@ -96,7 +96,7 @@ LinkedIn provider tokens expire after **60 days**. Unlike Meta and Google, Linke
 
 #### Solution 1: Re-authenticate with Correct Scopes
 
-1. Direct the user to https://app.hopkin.ai
+1. Direct the user to https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=linkedin-ads
 2. Ask them to disconnect and reconnect their LinkedIn account
 3. Ensure they grant all requested permissions during the OAuth flow
 
@@ -236,14 +236,14 @@ Rows then carry `sends`, `opens`, `open_rate`, `engagement_rate`, `cost_per_send
 
 **Solutions:**
 - Call `linkedin_ads_check_auth_status` to confirm token status
-- If expired (60-day TTL), direct user to https://app.hopkin.ai to reconnect
+- If expired (60-day TTL), direct user to https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=linkedin-ads to reconnect
 
 #### Forbidden / 403
 **Cause:** Insufficient permissions or attempting a write operation.
 
 **Solutions:**
 - Verify the user's role in LinkedIn Campaign Manager
-- Re-authenticate with correct scopes via https://app.hopkin.ai
+- Re-authenticate with correct scopes via https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=linkedin-ads
 - Confirm this is a read operation (MCP is read-only)
 
 ---
@@ -384,7 +384,7 @@ When encountering issues, work through this checklist:
 - [ ] **Authentication**
   - [ ] `linkedin_ads_check_auth_status` returns `authenticated: true`
   - [ ] LinkedIn token has not expired (check `expires_at`, 60-day TTL)
-  - [ ] User has completed OAuth flow via https://app.hopkin.ai
+  - [ ] User has completed OAuth flow via https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=linkedin-ads
 
 - [ ] **Permissions**
   - [ ] User has access to target ad account
@@ -409,10 +409,10 @@ When encountering issues, work through this checklist:
 → Check: Hopkin plugin enabled and its server signed in, restart Claude
 
 **"Not authenticated"**
-→ Run: `linkedin_ads_check_auth_status` → Direct user to https://app.hopkin.ai
+→ Run: `linkedin_ads_check_auth_status` → Direct user to https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=linkedin-ads
 
 **"Token expired"**
-→ LinkedIn tokens expire every 60 days → Direct user to https://app.hopkin.ai to reconnect
+→ LinkedIn tokens expire every 60 days → Direct user to https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=linkedin-ads to reconnect
 
 **"Account not found"**
 → Check: Account ID is numeric (no URN prefix), user has account access
@@ -436,4 +436,4 @@ When encountering issues, work through this checklist:
 
 **Document Version:** 1.0
 **Last Updated:** 2026-03-02
-**Service:** Hopkin LinkedIn Ads MCP (https://app.hopkin.ai)
+**Service:** Hopkin LinkedIn Ads MCP (https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=linkedin-ads)

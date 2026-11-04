@@ -34,12 +34,12 @@ To verify the Hopkin Mailchimp MCP is available:
 If no `mailchimp_` prefixed tools are available:
 
 1. **Inform the user** that the Hopkin Mailchimp MCP is required to use this skill
-2. **Direct them to sign up** at https://app.hopkin.ai
+2. **Direct them to sign up** at https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=mailchimp
 3. **Provide setup instructions:**
 
 > The Hopkin Mailchimp MCP is not connected. To use this skill:
 >
-> 1. Sign up at **https://app.hopkin.ai** and connect your account there
+> 1. Sign up at **https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=mailchimp** and connect your account there
 > 2. Make sure the **Hopkin** plugin is installed and enabled. It sets up the hosted `hopkin-mailchimp` MCP server (`https://mailchimp.mcp.hopkin.ai/mcp`) for you, so there is nothing to configure by hand
 > 3. When Claude asks you to sign in to `hopkin-mailchimp`, finish the Hopkin login in your browser. Sign-in uses OAuth, so there is nothing to copy or paste
 
@@ -51,7 +51,7 @@ If no `mailchimp_` prefixed tools are available:
 After confirming the MCP is available, authenticate the user's Mailchimp account:
 
 1. **Check auth status:** Call `mailchimp_check_auth_status` to see if the user is already authenticated
-2. **If not authenticated:** Inform the user that they need to connect their Mailchimp account via https://app.hopkin.ai and follow the OAuth flow there
+2. **If not authenticated:** Inform the user that they need to connect their Mailchimp account via https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=mailchimp and follow the OAuth flow there
 
 ### Quick Start with Preferences
 
@@ -235,7 +235,7 @@ Campaign reports include industry comparison stats. Always highlight how the use
 
 When errors occur:
 
-1. **Check authentication** — Run `mailchimp_check_auth_status`; if not authenticated, direct the user to connect their account at https://app.hopkin.ai
+1. **Check authentication** — Run `mailchimp_check_auth_status`; if not authenticated, direct the user to connect their account at https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=mailchimp
 2. **Validate inputs** — Ensure audience_id and campaign_id are correct
 3. **Inspect error messages** — Hopkin errors include specific guidance
 4. **Check campaign status** — Campaign reports require the campaign to be in "sent" status
@@ -250,7 +250,7 @@ For detailed troubleshooting guidance, see **references/troubleshooting.md**.
 Common quick fixes:
 
 - **"MCP server not found"** — Check that the Hopkin plugin is enabled and its server is signed in
-- **"Not authenticated"** — Run `mailchimp_check_auth_status`; direct user to connect their account at https://app.hopkin.ai
+- **"Not authenticated"** — Run `mailchimp_check_auth_status`; direct user to connect their account at https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=mailchimp
 - **"Campaign not sent"** — Campaign reports only work for campaigns with "sent" status
 - **"Audience not found"** — Verify audience ID with `mailchimp_list_audiences`
 - **"No data available"** — Check that the audience has subscribers or the campaign has been sent
@@ -270,4 +270,4 @@ For more detailed information:
 
 ---
 
-**Requires:** Hopkin Mailchimp MCP (https://app.hopkin.ai)
+**Requires:** Hopkin Mailchimp MCP (https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=mailchimp)

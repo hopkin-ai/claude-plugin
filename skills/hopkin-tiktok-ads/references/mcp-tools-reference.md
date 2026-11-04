@@ -20,7 +20,7 @@ This document provides detailed reference information for the Hopkin TikTok Ads 
 ### Hopkin TikTok Ads MCP
 
 - **Service:** Hopkin — hosted MCP service
-- **Sign up:** https://app.hopkin.ai
+- **Sign up:** https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=tiktok-ads
 - **Type:** Hosted MCP (OAuth sign-in, no local installation)
 
 ### Configuration
@@ -38,13 +38,13 @@ The Hopkin plugin registers this server for you:
 }
 ```
 
-It signs in with OAuth against the user's Hopkin account at https://app.hopkin.ai. There is nothing else to configure.
+It signs in with OAuth against the user's Hopkin account at https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=tiktok-ads. There is nothing else to configure.
 
 ---
 
 ## Authentication & Connection
 
-Hopkin uses OAuth. If a tool call fails with an auth error, call `tiktok_ads_check_auth_status` to check. If not authenticated, use `tiktok_ads_get_login_url` to get the OAuth URL or direct the user to https://app.hopkin.ai to connect their TikTok Ads account. If auth errors persist, direct the user to https://app.hopkin.ai to reconnect.
+Hopkin uses OAuth. If a tool call fails with an auth error, call `tiktok_ads_check_auth_status` to check. If not authenticated, use `tiktok_ads_get_login_url` to get the OAuth URL or direct the user to https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=tiktok-ads to connect their TikTok Ads account. If auth errors persist, direct the user to https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=tiktok-ads to reconnect.
 
 ---
 
@@ -735,14 +735,14 @@ List tools (advertisers, campaigns, ad groups, ads) may use **cursor-based pagin
 
 ### Common Error Types
 
-- **Authentication errors** — User not authenticated or TikTok token failed. Call `tiktok_ads_check_auth_status` to confirm, then direct the user to https://app.hopkin.ai to reconnect.
+- **Authentication errors** — User not authenticated or TikTok token failed. Call `tiktok_ads_check_auth_status` to confirm, then direct the user to https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=tiktok-ads to reconnect.
 - **Rate limiting** — TikTok API enforces rate limits. Wait and retry with exponential backoff.
 - **Advertiser not found** — Verify `advertiser_id` and user access. TikTok advertiser IDs are numeric strings (e.g., `7012345678901234567`).
 - **No data** — The requested date range or entity filters returned no results. Broaden the date range or remove filters.
 
 ### Error Handling Best Practices
 
-1. **Always check auth first** — If tools return auth errors, run `tiktok_ads_check_auth_status` and direct the user to https://app.hopkin.ai to re-authenticate
+1. **Always check auth first** — If tools return auth errors, run `tiktok_ads_check_auth_status` and direct the user to https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=tiktok-ads to re-authenticate
 2. **Respect rate limits** — Avoid rapid sequential calls; batch where possible
 3. **Handle pagination** — Don't assume all results are in the first page. Check for additional pages in response metadata.
 4. **Use correct ID formats** — TikTok advertiser IDs are numeric strings; `adgroup_id` has no underscore between "ad" and "group"
@@ -801,4 +801,4 @@ Simple health check and connectivity test for the TikTok Ads MCP server.
 
 **Document Version:** 1.0
 **Last Updated:** 2026-03-22
-**Service:** Hopkin TikTok Ads MCP (https://app.hopkin.ai)
+**Service:** Hopkin TikTok Ads MCP (https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=tiktok-ads)

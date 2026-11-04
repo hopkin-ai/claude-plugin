@@ -35,12 +35,12 @@ To verify the Hopkin Meta Ads MCP is available:
 If no `meta_ads_` prefixed tools are available:
 
 1. **Inform the user** that the Hopkin Meta Ads MCP is required to use this skill
-2. **Direct them to sign up** at https://app.hopkin.ai
+2. **Direct them to sign up** at https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=meta-ads
 3. **Provide setup instructions:**
 
 > The Hopkin Meta Ads MCP is not connected. To use this skill:
 >
-> 1. Sign up at **https://app.hopkin.ai** and connect your account there
+> 1. Sign up at **https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=meta-ads** and connect your account there
 > 2. Make sure the **Hopkin** plugin is installed and enabled. It sets up the hosted `hopkin-meta-ads` MCP server (`https://meta.mcp.hopkin.ai/mcp`) for you, so there is nothing to configure by hand
 > 3. When Claude asks you to sign in to `hopkin-meta-ads`, finish the Hopkin login in your browser. Sign-in uses OAuth, so there is nothing to copy or paste
 
@@ -52,7 +52,7 @@ If no `meta_ads_` prefixed tools are available:
 After confirming the MCP is available, authenticate the user's Meta Ads account:
 
 1. **Check auth status:** Call `meta_ads_check_auth_status` to see if the user is already authenticated and to get their user info
-2. **If not authenticated:** Inform the user they need to connect their Meta Ads account via Hopkin at https://app.hopkin.ai and pause execution until they confirm it is done
+2. **If not authenticated:** Inform the user they need to connect their Meta Ads account via Hopkin at https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=meta-ads and pause execution until they confirm it is done
 3. **Re-verify:** Call `meta_ads_check_auth_status` again to confirm successful authentication
 
 ### Quick Start with Preferences
@@ -352,7 +352,7 @@ Always include: spend, impressions/reach, and at least one efficiency metric.
 
 When errors occur:
 
-1. **Check authentication** — Run `meta_ads_check_auth_status`; if not authenticated, direct the user to connect their account at https://app.hopkin.ai
+1. **Check authentication** — Run `meta_ads_check_auth_status`; if not authenticated, direct the user to connect their account at https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=meta-ads
 2. **Validate inputs** — Ensure Ad Account ID starts with "act_", date ranges are valid
 3. **Inspect error messages** — Hopkin errors include specific guidance
 4. **Retry with adjusted parameters** — Try smaller date ranges or fewer breakdowns
@@ -367,7 +367,7 @@ For detailed troubleshooting guidance, see **references/troubleshooting.md**.
 Common quick fixes:
 
 - **"MCP server not found"** — Check that the Hopkin plugin is enabled and its server is signed in
-- **"Not authenticated"** — Run `meta_ads_check_auth_status`; if not authenticated, direct user to https://app.hopkin.ai to connect their Meta Ads account
+- **"Not authenticated"** — Run `meta_ads_check_auth_status`; if not authenticated, direct user to https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=meta-ads to connect their Meta Ads account
 - **"Account not found"** — Verify Ad Account ID format (starts with "act_")
 - **"Rate limit exceeded"** — Wait and retry; reduce request frequency
 - **"No data available"** — Check date range and campaign activity during period
@@ -390,4 +390,4 @@ For more detailed information:
 
 ---
 
-**Requires:** Hopkin Meta Ads MCP (https://app.hopkin.ai)
+**Requires:** Hopkin Meta Ads MCP (https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=skill&utm_content=meta-ads)
