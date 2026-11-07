@@ -1,8 +1,8 @@
 # Hopkin for Claude
 
-**Stop switching tabs. Get your ad performance inside Claude.**
+**Ad performance, creative analysis and competitor ad tracking in Claude.**
 
-Hopkin connects your Meta, Google, Microsoft Ads, LinkedIn, Reddit, TikTok, ChatGPT Ads, Mailchimp, Google Search Console, and Google Analytics accounts to Claude, so you can ask questions, pull reports, and surface insights without opening a dashboard.
+Hopkin connects Claude to your Google, Meta, Microsoft, LinkedIn, Reddit, TikTok and ChatGPT Ads accounts, plus Mailchimp, Google Search Console and GA4. Compare performance across Meta and Google without manual reporting, run ad creative analysis and compare creatives, and track competitor ads in the Meta and LinkedIn ad libraries to see their hooks, angles, offers and creative patterns. Hopkin is read-only: it reads your data and never changes your campaigns.
 
 ## What you can do
 
@@ -11,6 +11,8 @@ Ask Claude things like:
 - *"Which Meta campaigns are above target CPA this week?"*
 - *"Compare Google vs Meta spend and ROAS for the last 30 days."*
 - *"Rank my creatives by CPA and show demographic breakdowns."*
+- *"What hooks and offers is my top competitor running in the Meta Ad Library?"*
+- *"Show me the LinkedIn Ad Library ads a competitor launched this month."*
 - *"Flag any campaigns that underspent their budget this month."*
 - *"How are my LinkedIn Ads performing compared to Meta this quarter?"*
 - *"Which subreddits are driving the most conversions for my Reddit campaigns?"*
