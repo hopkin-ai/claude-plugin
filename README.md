@@ -2,7 +2,7 @@
 
 **Stop switching tabs. Get your ad performance inside Claude.**
 
-Hopkin connects your Meta, Google, LinkedIn, Reddit, TikTok, ChatGPT Ads, Mailchimp, Google Search Console, and Google Analytics accounts to Claude, so you can ask questions, pull reports, and surface insights without opening a dashboard.
+Hopkin connects your Meta, Google, Microsoft Ads, LinkedIn, Reddit, TikTok, ChatGPT Ads, Mailchimp, Google Search Console, and Google Analytics accounts to Claude, so you can ask questions, pull reports, and surface insights without opening a dashboard.
 
 ## What you can do
 
@@ -49,6 +49,7 @@ One install gives you every supported platform. Each platform has a skill that t
 |---|---|---|
 | Meta (Facebook/Instagram) Ads | `hopkin-meta-ads` | `https://meta.mcp.hopkin.ai/mcp` |
 | Google Ads | `hopkin-google-ads` | `https://google.mcp.hopkin.ai/mcp` |
+| Microsoft Ads (Bing) | `hopkin-microsoft-ads` | `https://microsoft.mcp.hopkin.ai/mcp` |
 | LinkedIn Ads | `hopkin-linkedin-ads` | `https://linkedin.mcp.hopkin.ai/mcp` |
 | Reddit Ads | `hopkin-reddit-ads` | `https://reddit.mcp.hopkin.ai/mcp` |
 | TikTok Ads | `hopkin-tiktok-ads` | `https://tiktok.mcp.hopkin.ai/mcp` |
@@ -61,7 +62,7 @@ The plugin contains only Markdown skills and the MCP server configuration in [`.
 
 ## Data and privacy
 
-- **Where data goes.** The plugin talks only to the nine Hopkin MCP servers listed above, all on `*.mcp.hopkin.ai` over HTTPS. Those servers call each platform's official API on your behalf, using the accounts you connected at app.hopkin.ai. The skills also contain links for you to open yourself, such as app.hopkin.ai, each platform's ads manager, and the free Hopkin Tag Inspector Chrome extension; the plugin never fetches them.
+- **Where data goes.** The plugin talks only to the ten Hopkin MCP servers listed above, all on `*.mcp.hopkin.ai` over HTTPS. Those servers call each platform's official API on your behalf, using the accounts you connected at app.hopkin.ai. The skills also contain links for you to open yourself, such as app.hopkin.ai, each platform's ads manager, and the free Hopkin Tag Inspector Chrome extension; the plugin never fetches them.
 - **Authentication.** Each MCP server uses OAuth with your Hopkin account. The plugin itself stores no credentials, and asks for no API keys.
 - **Read-focused.** The tools retrieve and analyze reporting data. They do not create, edit, pause, or delete campaigns, ads, or budgets on any platform. The only changes they make are to your Hopkin workspace itself, such as renaming or sharing a connection, or tracking a competitor in the ad library.
 - **Usage logging.** Hopkin records which tools are called and with what parameters, to operate and improve the service.
