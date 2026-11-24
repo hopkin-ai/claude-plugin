@@ -2,7 +2,7 @@
 
 **Ad performance, creative analysis and competitor ad tracking in Claude.**
 
-Hopkin connects Claude to your Google, Meta, Microsoft, LinkedIn, Reddit, TikTok and ChatGPT Ads accounts, plus Mailchimp, Google Search Console and GA4. Compare performance across Meta and Google without manual reporting, run ad creative analysis and compare creatives, and track competitor ads in the Meta and LinkedIn ad libraries to see their hooks, angles, offers and creative patterns. Hopkin is read-only: it reads your data and never changes your campaigns.
+Hopkin connects Claude to your Google, Meta, Microsoft, LinkedIn, Reddit, TikTok and ChatGPT Ads accounts, plus Mailchimp, Google Search Console and GA4. Compare performance across Meta and Google without manual reporting, run ad creative analysis and compare creatives, and track competitor ads in the Meta and LinkedIn ad libraries to see their hooks, angles, offers and creative patterns. Hopkin reads campaign data from the ad platforms and does not change your ad accounts. A few tools do write: they rename, share, set the default for or revoke your Hopkin connections, track or untrack competitors, turn on creative intelligence for an ad account, send feedback to Hopkin, and create a Stripe checkout link when the organization owner asks to pay.
 
 ## What you can do
 
@@ -70,6 +70,10 @@ The plugin contains only Markdown skills and the MCP server configuration in [`.
 - **Usage logging.** Hopkin records which tools are called and with what parameters, to operate and improve the service.
 
 See the [Privacy Policy](https://www.hopkin.ai/privacy-policy) and [Terms of Service](https://www.hopkin.ai/terms-of-service) for details.
+
+## Feedback to Hopkin
+
+Every Hopkin server has a `*_developer_feedback` tool (for example `meta_ads_developer_feedback`). It sends a short description of a missing capability or fault to Hopkin. Claude sends it only when you ask it to, or after asking you and getting a yes. It does not send your conversation, its history or a summary of it.
 
 ## Support
 
