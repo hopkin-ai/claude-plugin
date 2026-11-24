@@ -71,6 +71,10 @@ The plugin contains only Markdown skills and the MCP server configuration in [`.
 
 See the [Privacy Policy](https://www.hopkin.ai/privacy-policy) and [Terms of Service](https://www.hopkin.ai/terms-of-service) for details.
 
+## Feedback to Hopkin
+
+Every Hopkin server has a `*_developer_feedback` tool (for example `meta_ads_developer_feedback`). It sends a short description of a missing capability or fault to Hopkin. Claude sends it only when you ask it to, or after asking you and getting a yes. It does not send your conversation, its history or a summary of it.
+
 ## Support
 
 - Documentation: [hopkin.ai/docs](https://www.hopkin.ai/docs/getting-started)
