@@ -2,7 +2,7 @@
 
 **Ad performance, creative analysis and competitor ad tracking in Claude.**
 
-Hopkin connects Claude to your Google, Meta, Microsoft, LinkedIn, Reddit, TikTok and ChatGPT Ads accounts, plus Mailchimp, Google Search Console and GA4. Compare performance across Meta and Google without manual reporting, run ad creative analysis and compare creatives, and track competitor ads in the Meta and LinkedIn ad libraries to see their hooks, angles, offers and creative patterns. Hopkin reads campaign data from the ad platforms and does not edit your campaigns, ads or budgets. A few tools do write: the Meta reach forecast creates a reach and frequency prediction in your Meta ad account (it commits no spend), and other tools rename, share, set the default for or revoke your Hopkin connections, track or untrack competitors, turn on creative intelligence for an ad account, send feedback to Hopkin, and create a Stripe checkout link when the organization owner asks to pay.
+Hopkin connects Claude to your Google, Meta, Microsoft, LinkedIn, Reddit, TikTok and ChatGPT Ads accounts, plus Mailchimp, Google Search Console and GA4, and to the public organic posts of the TikTok, YouTube, Facebook, Instagram and X accounts your organization tracks. Compare performance across Meta and Google without manual reporting, run ad creative analysis and compare creatives, and track competitor ads in the Meta and LinkedIn ad libraries to see their hooks, angles, offers and creative patterns. Hopkin reads campaign data from the ad platforms and does not edit your campaigns, ads or budgets. A few tools do write: the Meta reach forecast creates a reach and frequency prediction in your Meta ad account (it commits no spend), and other tools rename, share, set the default for or revoke your Hopkin connections, track or untrack competitors and public social accounts (tracking a social account is charged in credits), run a live lookup of a public social account, turn on creative intelligence for an ad account, send feedback to Hopkin, and create a Stripe checkout link when the organization owner asks to pay.
 
 ## What you can do
 
@@ -13,12 +13,13 @@ Ask Claude things like:
 - *"Rank my creatives by CPA and show demographic breakdowns."*
 - *"What hooks and offers is my top competitor running in the Meta Ad Library?"*
 - *"Show me the LinkedIn Ad Library ads a competitor launched this month."*
+- *"What did our competitors post on TikTok last week, and which posts took off?"*
 - *"Flag any campaigns that underspent their budget this month."*
 - *"How are my LinkedIn Ads performing compared to Meta this quarter?"*
 - *"Which subreddits are driving the most conversions for my Reddit campaigns?"*
 - *"Which search queries lost the most clicks month over month?"*
 
-Claude answers with live data from your own accounts.
+Claude answers with live data from your own accounts, and with the posts Hopkin collects daily from the public social accounts you track.
 
 ## Install
 
@@ -41,7 +42,7 @@ Then install the **Hopkin** plugin.
 
 ### Connect your accounts
 
-The plugin requires a Hopkin account. Sign up at [hopkin.ai](https://www.hopkin.ai). The first time Claude uses a Hopkin tool, it walks you through a one-time OAuth login at [app.hopkin.ai](https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=readme&utm_content=readme), where you connect the ad and analytics accounts you want Claude to read.
+The plugin requires a Hopkin account. Sign up at [hopkin.ai](https://www.hopkin.ai). The first time Claude uses a Hopkin tool, it walks you through a one-time OAuth login at [app.hopkin.ai](https://app.hopkin.ai/?utm_source=claude-plugin&utm_medium=readme&utm_content=readme), where you connect the ad and analytics accounts you want Claude to read. Organic social needs no connection: it reads the public accounts your Hopkin organization tracks.
 
 ## What's included
 
@@ -59,14 +60,15 @@ One install gives you every supported platform. Each platform has a skill that t
 | Mailchimp | `hopkin-mailchimp` | `https://mailchimp.mcp.hopkin.ai/mcp` |
 | Google Search Console | `hopkin-google-search-console` | `https://gcs.mcp.hopkin.ai/mcp` |
 | Google Analytics (GA4) | `hopkin-google-analytics` | `https://ga4.mcp.hopkin.ai/mcp` |
+| Organic social (TikTok, YouTube, Facebook, Instagram, X) | `hopkin-organic-social` | `https://organic.mcp.hopkin.ai/mcp` |
 
 The plugin contains only Markdown skills and the MCP server configuration in [`.mcp.json`](.mcp.json). It ships no hooks, scripts, or executables, and runs nothing on your machine.
 
 ## Data and privacy
 
-- **Where data goes.** The plugin talks only to the ten Hopkin MCP servers listed above, all on `*.mcp.hopkin.ai` over HTTPS. Those servers call each platform's official API on your behalf, using the accounts you connected at app.hopkin.ai. The skills also contain links for you to open yourself, such as app.hopkin.ai, each platform's ads manager, and the free Hopkin Tag Inspector Chrome extension; the plugin never fetches them.
+- **Where data goes.** The plugin talks only to the eleven Hopkin MCP servers listed above, all on `*.mcp.hopkin.ai` over HTTPS. Those servers call each platform's official API on your behalf, using the accounts you connected at app.hopkin.ai. The organic social server reads Hopkin's own store of public posts, collected from the accounts your organization tracks. The skills also contain links for you to open yourself, such as app.hopkin.ai, each platform's ads manager, and the free Hopkin Tag Inspector Chrome extension; the plugin never fetches them.
 - **Authentication.** Each MCP server uses OAuth with your Hopkin account. The plugin itself stores no credentials, and asks for no API keys.
-- **No campaign edits.** The tools retrieve and analyze reporting data. They do not create, edit, pause, or delete campaigns, ads, or budgets on any platform. The Meta reach forecast creates a reach and frequency prediction in the Meta ad account; the other changes are to your Hopkin workspace itself, such as renaming or sharing a connection, or tracking a competitor in the ad library.
+- **No campaign edits.** The tools retrieve and analyze reporting data. They do not create, edit, pause, or delete campaigns, ads, or budgets on any platform. The Meta reach forecast creates a reach and frequency prediction in the Meta ad account; the other changes are to your Hopkin workspace itself, such as renaming or sharing a connection, tracking a competitor in the ad library, or tracking a public social account.
 - **Usage logging.** Hopkin records which tools are called and with what parameters, to operate and improve the service.
 
 See the [Privacy Policy](https://www.hopkin.ai/privacy-policy) and [Terms of Service](https://www.hopkin.ai/terms-of-service) for details.

@@ -39,6 +39,10 @@
     "hopkin-chatgpt-ads": {
       "type": "http",
       "url": "https://chatgpt.mcp.hopkin.ai/mcp"
+    },
+    "hopkin-organic-social": {
+      "type": "http",
+      "url": "https://organic.mcp.hopkin.ai/mcp"
     }
   }
 }
